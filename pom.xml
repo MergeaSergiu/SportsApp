@@ -38,7 +38,64 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>1.7.5</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
+        </dependency>
+
+
+
+
+
+
+
+        <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx -->
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx</artifactId>
+            <version>8.9</version>
+        </dependency>
+
+
+
+        <!-- https://mvnrepository.com/artifact/com.jfoenix/jfoenix -->
+        <dependency>
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>8.0.1</version>
+        </dependency>
+
+
+
+
+        <dependency>
+            <groupId>com.xenoamess</groupId>
+            <artifactId>nashorn</artifactId>
+            <version>jdk8u265-b01-x3</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+
     </dependencies>
+
+
 
     <build>
         <plugins>
@@ -60,7 +117,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.tema1/com.example.tema1.HelloApplication</mainClass>
+                            <mainClass>com.example.tema1/com.example.tema1.Login</mainClass>
                         </configuration>
                     </execution>
                 </executions>
