@@ -7,6 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -61,7 +64,7 @@ public class LoginController {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT count(1) FROM user_account WHERE username= '"+tf_username.getText()+"' AND password = '"+ tf_password.getText() +"'";
+        String verifyLogin = "SELECT count(1) FROM user_account WHERE username= '"+tf_username.getText()+"' AND password = '"+ encodePassword(tf_username.getText(),tf_password.getText()) +"'";
         try{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
@@ -93,5 +96,30 @@ public class LoginController {
         Main l = new Main();
          l.changeScene("sign_up.fxml");
     }
+
+
+
+    private static String encodePassword(String salt, String password) {
+        MessageDigest md = getMessageDigest();
+        md.update(salt.getBytes(StandardCharsets.UTF_8));
+
+        byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
+
+        // This is the way a password should be encoded when checking the credentials
+        return new String(hashedPassword, StandardCharsets.UTF_8)
+                .replace("\"", "*"); //to be able to save in JSON format
+    }
+
+
+    private static MessageDigest getMessageDigest() {
+        MessageDigest md;
+        try {
+            md = MessageDigest.getInstance("SHA-512");
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException("SHA-512 does not exist!");
+        }
+        return md;
+    }
+
 
 }
