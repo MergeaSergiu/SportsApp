@@ -1,5 +1,6 @@
 package com.example.tema1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -62,6 +63,10 @@ public class TerenHandbalCustomerView {
 
     @FXML
     private TextField text_username;
+
+    void Save_Reservation_Handbal(ActionEvent event) {
+
+    }
 
 }
 

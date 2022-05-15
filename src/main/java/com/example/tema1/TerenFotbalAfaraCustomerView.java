@@ -68,7 +68,7 @@ public class TerenFotbalAfaraCustomerView {
     private TextField text_username;
 
     @FXML
-    void Save_Reservation(ActionEvent event) {
+    void Save_Reservation_Teren_Afara(ActionEvent event) {
 
     }
 
