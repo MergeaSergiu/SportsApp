@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.TerenFotbalAfara">
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.TerenFotbalAfaraCustomerView">
    <children>
       <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="93.0" prefWidth="127.0">
          <children>
@@ -24,7 +24,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="label_numepagina" alignment="CENTER" layoutX="291.0" layoutY="39.0" prefHeight="56.0" prefWidth="655.0" text="      Rezervari Teren Fotbal Acoperit" textAlignment="CENTER">
+      <Label fx:id="label_numepagina" alignment="CENTER" layoutX="291.0" layoutY="39.0" prefHeight="56.0" prefWidth="655.0" text="      Rezervari Teren Fotbal Afara" textAlignment="CENTER">
          <font>
             <Font name="Britannic Bold" size="24.0" />
          </font>
