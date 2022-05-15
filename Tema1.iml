@@ -31,5 +31,14 @@
     <orderEntry type="library" name="Maven: de.jensd:fontawesomefx:8.9" level="project" />
     <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:8.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.xenoamess:nashorn:jdk8u265-b01-x3" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../MySQL/mysql-connector-java-8.0.29/mysql-connector-java-8.0.29.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
