@@ -61,7 +61,7 @@
             <Font name="Britannic Bold" size="18.0" />
          </font>
       </Label>
-      <MenuButton fx:id="menu_button" layoutX="317.0" layoutY="288.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="180.0" text="Interval_Orar">
+      <MenuButton fx:id="menu_button" layoutX="317.0" layoutY="288.0" mnemonicParsing="false" onAction="#select_hour" prefHeight="26.0" prefWidth="180.0" text="Interval_Orar">
         <items>
           <MenuItem fx:id="Ora5_6" mnemonicParsing="false" text="Action1" />
            <MenuItem fx:id="Ora6_7" mnemonicParsing="false" text="Action 2" />

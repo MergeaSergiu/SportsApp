@@ -86,4 +86,7 @@ public class TerenFotbalAfaraCustomerView {
         p.changeScene("CustomerView.fxml");
     }
 
+    public void select_hour(ActionEvent actionEvent) {
+
+    }
 }
