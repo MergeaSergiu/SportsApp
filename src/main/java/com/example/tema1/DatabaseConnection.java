@@ -20,6 +20,7 @@ public class DatabaseConnection {
             e.printStackTrace();
             e.getCause();
         }
+
         return databaseLink;
     }
 }
