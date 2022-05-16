@@ -66,16 +66,16 @@ public class Sign_upController{
         String username = tf_username.getText();
         String password = tf_password.getText();
 
-        String insertFields="INSERT INTO user_account(username, password) VALUES('";
+        String insertFields="INSERT INTO sign_up VALUES('";
         String insertValues= username +"','" +encodePassword(username,password)+"')";
         String insertToRegister = insertFields + insertValues;
 
         try{
             Statement statement = connectDB.createStatement();
-            System.out.println("MErge bine 1");
+            System.out.println("Merge bine 1");
             System.out.println(insertToRegister.length());
             statement.executeUpdate(insertToRegister);
-            System.out.println("MErge bine 2");
+            System.out.println("Merge bine 2");
             registrationMessageLabel.setText("User has been registered successfully!");
         }catch(Exception e){
             e.printStackTrace();

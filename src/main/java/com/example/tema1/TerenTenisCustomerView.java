@@ -4,31 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
 public class TerenTenisCustomerView {
-
-    @FXML
-    private MenuItem Ora5_6;
-
-    @FXML
-    private MenuItem Ora6_7;
-
-    @FXML
-    private MenuItem Ora7_8;
-
-    @FXML
-    private MenuItem Ora8_9;
-
-    @FXML
-    private MenuItem Ora9_10;
 
     @FXML
     private ImageView back_image;
@@ -46,6 +30,9 @@ public class TerenTenisCustomerView {
     private CheckBox check_caldura;
 
     @FXML
+    private ChoiceBox<?> choice_box_ora;
+
+    @FXML
     private ImageView home_image;
 
     @FXML
@@ -61,7 +48,7 @@ public class TerenTenisCustomerView {
     private Label label_selecteaza_data;
 
     @FXML
-    private MenuButton menu_button;
+    private Button salveaza_rezervare;
 
     @FXML
     private TextField text_username;
@@ -70,7 +57,7 @@ public class TerenTenisCustomerView {
 
     }
     @FXML
-    void home_page(ActionEvent event) throws IOException {
+    void home_page(ActionEvent event) throws  IOException {
         Main home_page = new Main();
         home_page.changeScene("first.fxml");
     }
