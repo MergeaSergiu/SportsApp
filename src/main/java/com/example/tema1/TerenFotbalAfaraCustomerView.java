@@ -11,6 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class TerenFotbalAfaraCustomerView {
 
@@ -30,7 +32,12 @@ public class TerenFotbalAfaraCustomerView {
     private CheckBox check_caldura;
 
     @FXML
-    private ChoiceBox<?> choice_box_ora;
+    private ChoiceBox<String> choice_box_ora;
+    private String[] ore = {"ora5_6","ora6_7","ora7_8","ora8_9"};
+
+    public void initialize(){
+        choice_box_ora.getItems().addAll(ore);
+    }
 
     @FXML
     private ImageView home_image;
