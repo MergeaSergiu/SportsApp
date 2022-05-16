@@ -16,7 +16,7 @@
    <children>
       <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="93.0" prefWidth="127.0">
          <children>
-            <Button fx:id="button_home_page" layoutX="27.0" layoutY="16.0" mnemonicParsing="false" onAction="#home_button" prefHeight="56.0" prefWidth="58.0" style="-fx-background-color: transparent;" text="Button" />
+            <Button fx:id="button_home_page" layoutX="27.0" layoutY="16.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="58.0" style="-fx-background-color: transparent;" text="Button" />
             <ImageView fx:id="home_image" fitHeight="56.0" fitWidth="58.0" layoutX="27.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images.png" />
@@ -37,8 +37,8 @@
       <TextField fx:id="text_username" layoutX="304.0" layoutY="132.0" prefHeight="41.0" prefWidth="366.0" />
       <AnchorPane layoutX="1047.0" layoutY="6.0" prefHeight="109.0" prefWidth="147.0">
          <children>
-            <Button fx:id="button_courts_page" layoutX="45.0" layoutY="18.0" mnemonicParsing="false" onAction="#menu_courts_button" prefHeight="62.0" prefWidth="62.0" style="-fx-background-color: transparent;" text="Button" />
-            <ImageView fx:id="back_image" fitHeight="62.0" fitWidth="80.0" layoutX="46.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="button_menu_page" layoutX="37.0" layoutY="18.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="80.0" style="-fx-background-color: transparent;" text="Button" />
+            <ImageView fx:id="back_image" fitHeight="62.0" fitWidth="80.0" layoutX="34.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@back.png" />
                </image>

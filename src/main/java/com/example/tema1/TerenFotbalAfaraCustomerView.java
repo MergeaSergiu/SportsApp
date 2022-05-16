@@ -1,5 +1,6 @@
 package com.example.tema1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -10,13 +11,24 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
+
 public class TerenFotbalAfaraCustomerView {
+
+    @FXML
+    private MenuItem Ora5_6;
 
     @FXML
     private MenuItem Ora6_7;
 
     @FXML
     private MenuItem Ora7_8;
+
+    @FXML
+    private MenuItem Ora8_9;
+
+    @FXML
+    private MenuItem Ora9_10;
 
     @FXML
     private ImageView back_image;
@@ -52,7 +64,26 @@ public class TerenFotbalAfaraCustomerView {
     private MenuButton menu_button;
 
     @FXML
+    private Button salveaza_rezervare;
+
+    @FXML
     private TextField text_username;
 
-}
+    @FXML
+    void Save_Reservation_Teren_Afara(ActionEvent event) {
 
+    }
+
+    @FXML
+    void home_button(ActionEvent event) throws IOException {
+        Main l = new Main();
+        l.changeScene("FirstPage.fxml");
+    }
+
+    @FXML
+    void menu_courts_button(ActionEvent event) throws IOException {
+        Main p = new Main();
+        p.changeScene("CustomerView.fxml");
+    }
+
+}

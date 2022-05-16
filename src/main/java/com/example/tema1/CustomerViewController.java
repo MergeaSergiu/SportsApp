@@ -31,13 +31,15 @@ public class CustomerViewController {
     private Button teren_tenis;
 
     @FXML
-    void action_button_basketball_court(ActionEvent event) {
-
+    void action_button_basketball_court(ActionEvent event) throws IOException {
+        Main basketball = new Main();
+        basketball.changeScene("TerenBaschet.fxml");
     }
 
     @FXML
-    void action_button_handbal_court(ActionEvent event) {
-
+    void action_button_handbal_court(ActionEvent event) throws IOException {
+        Main handbal = new Main();
+        handbal.changeScene("TerenHandbal.fxml");
     }
 
     @FXML
@@ -47,18 +49,21 @@ public class CustomerViewController {
     }
 
     @FXML
-    void action_button_inside_footbal_court(ActionEvent event) {
-
+    void action_button_inside_footbal_court(ActionEvent event) throws IOException {
+        Main insidefootball = new Main();
+        insidefootball.changeScene("TerenFotbalAcoperit.fxml");
     }
 
     @FXML
-    void action_button_outside_football_court(ActionEvent event) {
-
+    void action_button_outside_football_court(ActionEvent event) throws IOException {
+        Main outsidefootball = new Main();
+        outsidefootball.changeScene("TerenFotbalAfara.fxml");
     }
 
     @FXML
-    void action_button_tenis_court(ActionEvent event) {
-
+    void action_button_tenis_court(ActionEvent event) throws IOException {
+        Main tenis = new Main();
+        tenis.changeScene("TerenTenis.fxml");
     }
 
 }
