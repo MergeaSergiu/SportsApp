@@ -11,6 +11,8 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
+
 public class TerenFotbalAcoperitCustomerView {
 
     @FXML
@@ -66,6 +68,12 @@ public class TerenFotbalAcoperitCustomerView {
 
     void Save_Reservation_Teren_Acoperit(ActionEvent event) {
 
+    }
+
+    @FXML
+    void home_page(ActionEvent event) throws IOException {
+        Main home_page = new Main();
+        home_page.changeScene("first.fxml");
     }
 
 }

@@ -21,7 +21,7 @@
                         <Image url="@images.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="button_home_page" layoutX="40.0" layoutY="20.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="58.0" style="-fx-background-color: transparent;" />
+                <Button fx:id="button_home_page" layoutX="40.0" layoutY="20.0" mnemonicParsing="false" onAction="#home_page" prefHeight="56.0" prefWidth="58.0" style="-fx-background-color: transparent;" />
          </children>
         </AnchorPane>
         <Label fx:id="label_numepagina" alignment="CENTER" layoutX="291.0" layoutY="39.0" prefHeight="56.0" prefWidth="655.0" text="      Rezervari Teren Fotbal Afara" textAlignment="CENTER">
@@ -42,7 +42,7 @@
                         <Image url="@back.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="button_menu_page" layoutX="37.0" layoutY="15.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="80.0" style="-fx-background-color: transparent;" />
+                <Button fx:id="button_menu_page" layoutX="37.0" layoutY="15.0" mnemonicParsing="false" onAction="#menu_courts_page" prefHeight="62.0" prefWidth="80.0" style="-fx-background-color: transparent;" />
          </children>
         </AnchorPane>
         <CheckBox fx:id="check_caldura" layoutX="112.0" layoutY="378.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="162.0" style="-fx-background-color: orange;" text="Caldura">
