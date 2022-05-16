@@ -42,7 +42,7 @@
                         <Image url="@back.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="button_menu_page" layoutX="34.0" layoutY="19.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="80.0" style="-fx-background-color: transparent;" />
+                <Button fx:id="button_menu_page" layoutX="34.0" layoutY="19.0" mnemonicParsing="false" onAction="#menu_page" prefHeight="62.0" prefWidth="80.0" style="-fx-background-color: transparent;" />
          </children>
         </AnchorPane>
         <CheckBox fx:id="check_caldura" layoutX="112.0" layoutY="378.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="162.0" style="-fx-background-color: orange;" text="Caldura">

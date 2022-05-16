@@ -76,5 +76,11 @@ public class TerenHandbalCustomerView {
         home_page.changeScene("first.fxml");
     }
 
+    @FXML
+    void menu_page(ActionEvent event) throws IOException {
+        Main menu_page = new Main();
+        menu_page.changeScene("CustomerView.fxml");
+    }
+
 }
 

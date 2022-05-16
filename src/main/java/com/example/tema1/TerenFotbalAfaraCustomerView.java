@@ -76,17 +76,15 @@ public class TerenFotbalAfaraCustomerView {
 
     @FXML
     void home_button(/*ActionEvent event*/) throws IOException {
-        Main l = new Main();
-        l.changeScene("FirstPage.fxml");
+        Main home_button = new Main();
+        home_button.changeScene("FirstPage.fxml");
     }
 
     @FXML
     void menu_courts_button(ActionEvent event) throws IOException {
-        Main p = new Main();
-        p.changeScene("CustomerView.fxml");
+        Main menu_page = new Main();
+        menu_page.changeScene("CustomerView.fxml");
     }
 
-    public void select_hour(ActionEvent actionEvent) {
 
-    }
 }
