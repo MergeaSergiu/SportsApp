@@ -71,5 +71,10 @@
 
         </items>
       </MenuButton>
+      <Button fx:id="salveaza_rezervare" layoutX="482.0" layoutY="471.0" mnemonicParsing="false" onAction="#Save_Reservation_Teren_Afara" prefHeight="49.0" prefWidth="229.0" style="-fx-background-color: orange;" text="Salveaza_rezervare">
+         <font>
+            <Font name="Britannic Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

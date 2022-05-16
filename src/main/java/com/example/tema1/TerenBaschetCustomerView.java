@@ -1,5 +1,6 @@
 package com.example.tema1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -61,6 +62,15 @@ public class TerenBaschetCustomerView {
     private MenuButton menu_button;
 
     @FXML
+    private Button salveaza_rezervare;
+
+    @FXML
     private TextField text_username;
 
+    @FXML
+    void Save_Reservation_Baschet(ActionEvent event) {
+
+    }
+
 }
+

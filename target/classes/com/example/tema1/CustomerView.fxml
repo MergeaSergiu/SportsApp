@@ -20,7 +20,7 @@
                   </Label>
                   <AnchorPane layoutX="244.0" layoutY="71.0" prefHeight="200.0" prefWidth="398.0">
                      <children>
-                        <ImageView fitHeight="193.0" fitWidth="325.0" layoutX="7.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="193.0" fitWidth="325.0" layoutX="9.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@messi_ronaldo.jpg" />
                            </image>
