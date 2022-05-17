@@ -68,7 +68,7 @@ public class TerenBaschetCustomerView {
     @FXML
     void Save_Reservation_Baschet(ActionEvent event) {
 
-        String nume_teren= "Teren_Fotbal_Afara";
+        String nume_teren= "Teren_Baschet";
         try{
             if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
                 error_message.setText("Please fill in all the fields");
