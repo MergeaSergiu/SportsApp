@@ -8,14 +8,14 @@ import java.util.Date;
 public class SaveReservation {
 
 
-    public static void addReservation(String Name, Date Date, String Time_Schedule, boolean Heat, String Court) throws SQLException{
+    public static void addReservation(String username, Date Date, String Time_Schedule, String Heat, String Court) throws SQLException{
         PreparedStatement statement;
-        statement = DatabaseConnection.databaseLink.prepareStatement("INSERT INTO sportapp.reservations( Name,Date,Time_Schedule, Heat,Court) VALUES(?,?,?,?,?");
+        statement = DatabaseConnection.databaseLink.prepareStatement("INSERT INTO sportapp.rezervari( username,Date,Time_Schedule,Heat,Court) VALUES(?,?,?,?,?");
 
-        statement.setString(1,Name);
+        statement.setString(1,username);
         statement.setDate(2, (java.sql.Date) Date);
         statement.setString(3,Time_Schedule);
-        statement.setString(4,String.valueOf(Heat));
+        statement.setString(4,Heat);
         statement.setString(5,Court);
         statement.executeUpdate();
     }
@@ -27,7 +27,7 @@ public class SaveReservation {
         ResultSet user = statement.executeQuery();
         return user.next();
     }
-
+/*
     public static boolean validateData(Date Date) throws SQLException{
         PreparedStatement statement;
         statement = DatabaseConnection.databaseLink.prepareStatement("SELECT * from sportapp.reservations where Date =?");
@@ -51,7 +51,7 @@ public class SaveReservation {
         ResultSet user = statement.executeQuery();
         return user.next();
     }
-
+*/
 }
 
 

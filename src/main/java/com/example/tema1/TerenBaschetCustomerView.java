@@ -67,7 +67,7 @@ public class TerenBaschetCustomerView {
 
     @FXML
     void Save_Reservation_Baschet(ActionEvent event) {
-
+/*
         String nume_teren= "Teren_Baschet";
         try{
             if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
@@ -85,7 +85,7 @@ public class TerenBaschetCustomerView {
             //throwables.printStackTrace();
             error_message.setText("Something went wrong!");
         }
-
+*/
     }
     @FXML
     void home_page(ActionEvent event) throws  IOException {

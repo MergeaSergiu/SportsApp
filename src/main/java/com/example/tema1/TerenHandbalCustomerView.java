@@ -66,6 +66,7 @@ public class TerenHandbalCustomerView {
 
     @FXML
     void Save_Reservation_Handbal(ActionEvent event) {
+        /*
         String nume_teren= "Teren_Handbal";
         try{
             if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
@@ -83,6 +84,8 @@ public class TerenHandbalCustomerView {
             //throwables.printStackTrace();
             error_message.setText("Something went wrong!");
         }
+
+         */
     }
 
     @FXML

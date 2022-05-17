@@ -64,6 +64,7 @@ public class TerenTenisCustomerView {
 
     @FXML
     void Save_Reservation_Tenis(ActionEvent event) {
+        /*
         String nume_teren= "Teren_Tenis";
         try{
             if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
@@ -81,6 +82,8 @@ public class TerenTenisCustomerView {
             //throwables.printStackTrace();
             error_message.setText("Something went wrong!");
         }
+
+         */
     }
     @FXML
     void home_page(ActionEvent event) throws  IOException {

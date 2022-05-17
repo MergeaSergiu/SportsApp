@@ -64,6 +64,7 @@ public class TerenFotbalAcoperitCustomerView {
 
     @FXML
     void Save_Reservation_Teren_Acoperit(ActionEvent event) {
+        /*
         String nume_teren= "Teren_Fotbal_Acoperit";
         try{
             if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
@@ -81,6 +82,8 @@ public class TerenFotbalAcoperitCustomerView {
             //throwables.printStackTrace();
             error_message.setText("Something went wrong!");
         }
+
+         */
     }
 
     @FXML

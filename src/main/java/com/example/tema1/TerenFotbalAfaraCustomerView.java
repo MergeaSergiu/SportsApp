@@ -81,13 +81,22 @@ public class TerenFotbalAfaraCustomerView {
                 else if(SaveReservation.validateUser(text_username.getText()) == false){
                     error_message.setText("Username does not exist!");
                 }else{
+                    String Caldura;
+                    if(check_caldura.isSelected()){
+                        Caldura="TRUE";
+                    }
+                    else
+                    {
+                        Caldura="FALSE";
+                    }
+                    System.out.println("ok introduce valori");
                     java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
-                    SaveReservation.addReservation(text_username.getText(),data,choice_box_ora.getValue().toString(),check_caldura.isSelected(),nume_teren);
+                    SaveReservation.addReservation(text_username.getText(),data,choice_box_ora.getValue().toString(),Caldura,nume_teren);
                     error_message.setText("Rezervarea a fost adaugata cu succes");
                 }
 
             } catch (SQLException e) {
-                //throwables.printStackTrace();
+
                 error_message.setText("Something went wrong!");
             }
 
