@@ -74,7 +74,7 @@ public class TerenBaschetCustomerView {
     @FXML
     void menu_courts_page(ActionEvent event) throws IOException {
         Main menu_page = new Main();
-        menu_page.changeScene("CustomerView");
+        menu_page.changeScene("CustomerView.fxml");
     }
 
 }
