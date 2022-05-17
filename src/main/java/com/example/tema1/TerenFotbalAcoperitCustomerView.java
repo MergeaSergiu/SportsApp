@@ -73,7 +73,7 @@ public class TerenFotbalAcoperitCustomerView {
     }
 
     @FXML
-    void menu_page(ActionEvent event) throws IOException {
+    void menu_page(/*ActionEvent event*/) throws IOException {
         Main menu_page = new Main();
         menu_page.changeScene("CustomerView.fxml");
     }
