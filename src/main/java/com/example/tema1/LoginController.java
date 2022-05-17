@@ -64,7 +64,7 @@ public class LoginController {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT count(1) FROM user_account WHERE username= '"+tf_username.getText()+"' AND password = '"+ encodePassword(tf_username.getText(),tf_password.getText()) +"'";
+        String verifyLogin = "SELECT count(1) FROM sportapp.sign_up_table WHERE username= '"+tf_username.getText()+"' AND password = '"+ encodePassword(tf_username.getText(),tf_password.getText()) +"'";
         try{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
