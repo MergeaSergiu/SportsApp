@@ -61,6 +61,7 @@ public class TerenFotbalAcoperitCustomerView {
     @FXML
     private TextField text_username;
 
+    @FXML
     void Save_Reservation_Teren_Acoperit(ActionEvent event) {
 
     }
