@@ -61,6 +61,7 @@ public class TerenFotbalAcoperitCustomerView {
     @FXML
     private TextField text_username;
 
+    @FXML
     void Save_Reservation_Teren_Acoperit(ActionEvent event) {
 
     }
@@ -68,11 +69,11 @@ public class TerenFotbalAcoperitCustomerView {
     @FXML
     void home_page(ActionEvent event) throws IOException {
         Main home_page = new Main();
-        home_page.changeScene("first.fxml");
+        home_page.changeScene("FirstPage.fxml");
     }
 
     @FXML
-    void menu_page(ActionEvent event) throws IOException {
+    void menu_page(/*ActionEvent event*/) throws IOException {
         Main menu_page = new Main();
         menu_page.changeScene("CustomerView.fxml");
     }
