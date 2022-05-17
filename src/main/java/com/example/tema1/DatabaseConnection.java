@@ -2,7 +2,9 @@ package com.example.tema1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 public class DatabaseConnection {
-    public Connection databaseLink;
+
+    public static Connection databaseLink;
+    //public static Object getConnection;
 
     public Connection getConnection(){
         String databaseName = "sportapp";
