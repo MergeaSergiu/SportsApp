@@ -28,6 +28,29 @@ public class SaveReservation {
         return user.next();
     }
 
+    public static boolean validateData(Date Date) throws SQLException{
+        PreparedStatement statement;
+        statement = DatabaseConnection.databaseLink.prepareStatement("SELECT * from sportapp.reservations where Date =?");
+        statement.setDate(2, (java.sql.Date) Date);
+        ResultSet user = statement.executeQuery();
+        return user.next();
+    }
+
+    public static boolean validateOra(String Time_Schedule) throws SQLException{
+        PreparedStatement statement;
+        statement = DatabaseConnection.databaseLink.prepareStatement("SELECT * from sportapp.reservations where Time_Schedule =?");
+        statement.setString(3,Time_Schedule);
+        ResultSet user = statement.executeQuery();
+        return user.next();
+    }
+
+    public static boolean validateCourt(String Court) throws SQLException{
+        PreparedStatement statement;
+        statement = DatabaseConnection.databaseLink.prepareStatement("SELECT * from sportapp.reservation where Court=?");
+        statement.setString(4,Court);
+        ResultSet user = statement.executeQuery();
+        return user.next();
+    }
 
 }
 
