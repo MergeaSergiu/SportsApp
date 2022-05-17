@@ -24,6 +24,9 @@ public class TerenBaschetCustomerView {
     private Button button_menu_page;
 
     @FXML
+    private Label errormessage;
+
+    @FXML
     private DatePicker calendar_data;
 
     @FXML

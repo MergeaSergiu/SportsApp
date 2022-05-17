@@ -37,6 +37,11 @@ public class TerenHandbalCustomerView {
         choice_box_ora.getItems().addAll(ore);
     }
 
+
+
+    @FXML
+    private Label error_message;
+
     @FXML
     private ImageView home_image;
 

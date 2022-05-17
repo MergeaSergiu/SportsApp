@@ -23,7 +23,7 @@
                 <Button fx:id="button_home_page" layoutX="40.0" layoutY="20.0" mnemonicParsing="false" onAction="#home_page" prefHeight="56.0" prefWidth="58.0" style="-fx-background-color: transparent;" />
          </children>
         </AnchorPane>
-        <Label fx:id="label_numepagina" alignment="CENTER" layoutX="291.0" layoutY="39.0" prefHeight="56.0" prefWidth="655.0" text="      Rezervari Teren Fotbal Afara" textAlignment="CENTER">
+        <Label fx:id="label_numepagina" alignment="CENTER" layoutX="291.0" layoutY="39.0" prefHeight="56.0" prefWidth="655.0" text="      Rezervari Teren Baschet" textAlignment="CENTER">
             <font>
                 <Font name="Britannic Bold" size="24.0" />
             </font>
@@ -66,5 +66,6 @@
             </font>
         </Button>
       <ChoiceBox fx:id="choice_box_ora" layoutX="320.0" layoutY="295.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label fx:id="errormessage" layoutX="405.0" layoutY="427.0" prefHeight="25.0" prefWidth="419.0" />
     </children>
 </AnchorPane>

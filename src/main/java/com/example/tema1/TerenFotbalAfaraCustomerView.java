@@ -40,6 +40,10 @@ public class TerenFotbalAfaraCustomerView {
     }
 
     @FXML
+    private Label error_message;
+
+
+    @FXML
     private ImageView home_image;
 
     @FXML

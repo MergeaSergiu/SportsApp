@@ -66,5 +66,6 @@
             </font>
         </Button>
       <ChoiceBox fx:id="choice_box_ora" layoutX="320.0" layoutY="295.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label fx:id="error_message" layoutX="402.0" layoutY="413.0" prefHeight="41.0" prefWidth="420.0" />
     </children>
 </AnchorPane>

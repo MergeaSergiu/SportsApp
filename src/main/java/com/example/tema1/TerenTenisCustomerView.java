@@ -38,6 +38,9 @@ public class TerenTenisCustomerView {
     }
 
     @FXML
+    private Label error_message;
+
+    @FXML
     private ImageView home_image;
 
     @FXML
