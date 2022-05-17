@@ -66,7 +66,7 @@ public class Sign_upController{
         String username = tf_username.getText();
         String password = tf_password.getText();
 
-        String insertFields="INSERT INTO sign_up VALUES('";
+        String insertFields="INSERT INTO sportapp.sign_up_table VALUES('";
         String insertValues= username +"','" +encodePassword(username,password)+"')";
         String insertToRegister = insertFields + insertValues;
 

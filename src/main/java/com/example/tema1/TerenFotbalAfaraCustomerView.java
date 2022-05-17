@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class TerenFotbalAfaraCustomerView {
@@ -66,7 +67,15 @@ public class TerenFotbalAfaraCustomerView {
 
     @FXML
     void Save_Reservation_Teren_Afara(ActionEvent event) {
+        /*if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null ){
+            error_message.setText("Please fill in all the fields");
+        }
+        else
+        {
 
+        }
+
+         */
     }
 
     @FXML
