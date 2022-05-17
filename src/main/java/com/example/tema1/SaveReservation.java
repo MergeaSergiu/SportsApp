@@ -10,7 +10,7 @@ public class SaveReservation {
 
     public static void addReservation(String username, Date Date, String Time_Schedule, String Heat, String Court) throws SQLException{
         PreparedStatement statement;
-        statement = DatabaseConnection.databaseLink.prepareStatement("INSERT INTO sportapp.rezervari( username,Date,Time_Schedule,Heat,Court) VALUES(?,?,?,?,?");
+        statement = DatabaseConnection.databaseLink.prepareStatement("INSERT INTO sportapp.rezervari( username,Date,Time_Schedule,Heat,Court) VALUES(?,?,?,?,?)");
 
         statement.setString(1,username);
         statement.setDate(2, (java.sql.Date) Date);
@@ -18,6 +18,7 @@ public class SaveReservation {
         statement.setString(4,Heat);
         statement.setString(5,Court);
         statement.executeUpdate();
+
     }
 
     public static boolean validateUser(String username) throws SQLException{

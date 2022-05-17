@@ -6,15 +6,15 @@ import java.util.Date;
 public class Reservations {
 
  private int IDReservation;
- private String Name;
+ private String username;
  private Date Date;
  private String Time_Schedule;
- private boolean Heat;
+ private String Heat;
  private String Court;
 
- public Reservations(int IDReservation, String Name, Date Date, String Time_Schedule,boolean Heat, String Court){
+ public Reservations(int IDReservation, String username, Date Date, String Time_Schedule,String Heat, String Court){
      this.IDReservation = IDReservation;
-     this.Name = Name;
+     this.username = username;
      this.Date = Date;
      this.Time_Schedule = Time_Schedule;
      this.Heat = Heat;
@@ -30,11 +30,11 @@ public class Reservations {
  }
 
  public void setName(String Name){
-     this.Name = Name;
+     this.username = Name;
  }
 
  public String getName(){
-     return this.Name;
+     return this.username;
  }
 
  public void setDate(Date Date){
@@ -53,11 +53,11 @@ public class Reservations {
      return this.Time_Schedule;
  }
 
- public void setHeat(boolean Heat){
+ public void setHeat(String Heat){
      this.Heat = Heat;
  }
 
- public boolean getHeat(){
+ public String getHeat(){
      return this.Heat;
  }
 

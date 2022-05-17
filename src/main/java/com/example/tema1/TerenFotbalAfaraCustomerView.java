@@ -91,7 +91,8 @@ public class TerenFotbalAfaraCustomerView {
                     }
                     System.out.println("ok introduce valori");
                     java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
-                    SaveReservation.addReservation(text_username.getText(),data,choice_box_ora.getValue().toString(),Caldura,nume_teren);
+                   // System.out.println(choice_box_ora.getValue().toString());
+                    SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
                     error_message.setText("Rezervarea a fost adaugata cu succes");
                 }
 
