@@ -71,7 +71,7 @@ public class TerenHandbalCustomerView {
     @FXML
     void home_page(ActionEvent event) throws  IOException {
         Main home_page = new Main();
-        home_page.changeScene("first.fxml");
+        home_page.changeScene("FirstPage.fxml");
     }
 
     @FXML
