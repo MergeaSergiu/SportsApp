@@ -52,6 +52,8 @@ public class TerenFotbalAfaraCustomerView implements Initializable {
     private ChoiceBox<String> choice_box_ora;
     private String[] ore = {"ora5_6","ora6_7","ora7_8","ora8_9"};
 
+    @FXML
+    private Label valid_message;
 
 
     @FXML
@@ -82,12 +84,18 @@ public class TerenFotbalAfaraCustomerView implements Initializable {
     @FXML
     public void Save_Reservation_Teren_Afara()  {
         String nume_teren= "Teren_Fotbal_Afara";
+        java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
             try{
                 if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
                     error_message.setText("Please fill in all the fields");
+                    valid_message.setText("");
                 }
                 else if(SaveReservation.validateUser(text_username.getText()) == false){
                     error_message.setText("Username does not exist!");
+                    valid_message.setText("");
+                }else if ( SaveReservation.validateData(data) == true && SaveReservation.validateOra(choice_box_ora.getValue()) == true  && SaveReservation.validateCourt(nume_teren) == true )  {
+                    error_message.setText("Exista deja o rezervare pe aceasta data, ora si teren");
+                    valid_message.setText("");
                 }else{
                     String Caldura;
                     if(check_caldura.isSelected()){
@@ -98,10 +106,11 @@ public class TerenFotbalAfaraCustomerView implements Initializable {
                         Caldura="FALSE";
                     }
 
-                    java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
+
                    // System.out.println(choice_box_ora.getValue().toString());
                     SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
-                    error_message.setText("Rezervarea a fost adaugata cu succes");
+                    valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA!!");
+                    error_message.setText("");
                 }
 
             } catch (SQLException e) {
