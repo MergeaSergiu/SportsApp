@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.TerenHandbalCustomerView">
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.TerenHandbalCustomerView">
     <children>
         <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="93.0" prefWidth="127.0">
          <children>
@@ -66,6 +66,14 @@
             </font>
         </Button>
       <ChoiceBox fx:id="choice_box_ora" layoutX="320.0" layoutY="295.0" prefHeight="25.0" prefWidth="174.0" />
-      <Label fx:id="error_message" layoutX="400.0" layoutY="423.0" prefHeight="33.0" prefWidth="399.0" />
+      <Label fx:id="error_message" layoutX="389.0" layoutY="415.0" prefHeight="41.0" prefWidth="410.0" textFill="RED">
+         <font>
+            <Font name="Perpetua Titling MT Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="valid_message" layoutX="649.0" layoutY="221.0" prefHeight="83.0" prefWidth="462.0" textFill="#16d729">
+         <font>
+            <Font name="Perpetua Titling MT Bold" size="14.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

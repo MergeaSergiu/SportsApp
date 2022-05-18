@@ -66,6 +66,14 @@
             </font>
         </Button>
       <ChoiceBox fx:id="choice_box_ora" layoutX="320.0" layoutY="295.0" prefHeight="25.0" prefWidth="174.0" />
-      <Label fx:id="error_message" layoutX="412.0" layoutY="412.0" prefHeight="32.0" prefWidth="413.0" />
+      <Label fx:id="error_message" layoutX="412.0" layoutY="403.0" prefHeight="41.0" prefWidth="413.0" textFill="RED">
+         <font>
+            <Font name="Perpetua Titling MT Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="valid_message" layoutX="700.0" layoutY="221.0" prefHeight="70.0" prefWidth="406.0" textFill="#28b22d">
+         <font>
+            <Font name="Perpetua Titling MT Bold" size="14.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
