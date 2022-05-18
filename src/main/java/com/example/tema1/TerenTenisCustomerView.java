@@ -63,14 +63,20 @@ public class TerenTenisCustomerView {
     private TextField text_username;
 
     @FXML
+    private Label valid_message;
+
+    @FXML
     void Save_Reservation_Tenis(ActionEvent event) {
         String nume_teren= "Teren_Tenis";
         try{
             if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
                 error_message.setText("Please fill in all the fields");
+                valid_message.setText("");
+
             }
             else if(SaveReservation.validateUser(text_username.getText()) == false){
                 error_message.setText("Username does not exist!");
+                valid_message.setText("");
             }else{
                 String Caldura;
                 if(check_caldura.isSelected()){
@@ -84,7 +90,8 @@ public class TerenTenisCustomerView {
                 java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
                 // System.out.println(choice_box_ora.getValue().toString());
                 SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
-                error_message.setText("Rezervarea a fost adaugata cu succes");
+               valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA");
+               error_message.setText("");
             }
 
         } catch (SQLException e) {

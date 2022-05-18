@@ -44,7 +44,7 @@
             <Button fx:id="button_courts_page" layoutX="43.0" layoutY="13.0" mnemonicParsing="false" onAction="#menu_courts_button" prefHeight="62.0" prefWidth="62.0" style="-fx-background-color: transparent;" />
          </children>
       </AnchorPane>
-      <CheckBox fx:id="check_caldura" layoutX="112.0" layoutY="378.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="162.0" style="-fx-background-color: orange;" text="Caldura">
+      <CheckBox fx:id="check_caldura" layoutX="112.0" layoutY="372.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="162.0" style="-fx-background-color: orange;" text="Caldura">
          <font>
             <Font name="Britannic Bold" size="18.0" />
          </font>
@@ -60,12 +60,20 @@
             <Font name="Britannic Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="salveaza_rezervare" layoutX="482.0" layoutY="471.0" mnemonicParsing="false" onAction="#Save_Reservation_Teren_Afara" prefHeight="49.0" prefWidth="229.0" style="-fx-background-color: orange;" text="Salveaza_rezervare">
+      <Button fx:id="salveaza_rezervare" layoutX="482.0" layoutY="471.0" mnemonicParsing="false" onAction="#Save_Reservation_Teren_Afara" prefHeight="49.0" prefWidth="229.0" style="-fx-background-color: orange;" text="Salveaza_Rezervare">
          <font>
             <Font name="Britannic Bold" size="18.0" />
          </font>
       </Button>
       <ChoiceBox fx:id="choice_box_ora" layoutX="320.0" layoutY="295.0" prefHeight="26.0" prefWidth="180.0" />
-      <Label fx:id="error_message" layoutX="401.0" layoutY="421.0" prefHeight="32.0" prefWidth="401.0" />
+      <Label fx:id="error_message" layoutX="388.0" layoutY="412.0" prefHeight="41.0" prefWidth="414.0" textFill="RED">
+         <font>
+            <Font name="Perpetua Titling MT Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="valid_message" layoutX="680.0" layoutY="239.0" prefHeight="69.0" prefWidth="453.0" textFill="#2ed328">
+         <font>
+            <Font name="Perpetua Titling MT Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
