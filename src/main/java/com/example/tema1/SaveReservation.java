@@ -7,21 +7,27 @@ import java.util.Date;
 
 public class SaveReservation {
 
+    PreparedStatement statement;
+    private DatabaseConnection connectNow ;
+    private Connection connection ;
 
     public static void addReservation(String username, Date Date, String Time_Schedule, String Heat, String Court) throws SQLException{
 
         PreparedStatement statement;
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
+    try {
+        statement = connection.prepareStatement("INSERT INTO sportapp.reservation2 (username,data,interval_orar,caldura,Court) VALUES (?,?,?,?,?)");
 
-        statement = connection.prepareStatement("INSERT INTO sportapp.rezervari(username,Date,Time_Schedule,Heat,Court) VALUES(?,?,?,?,?)");
-
-        statement.setString(1,username);
+        statement.setString(1, username);
         statement.setDate(2, (java.sql.Date) Date);
-        statement.setString(3,Time_Schedule);
-        statement.setString(4,Heat);
-        statement.setString(5,Court);
+        statement.setString(3, Time_Schedule);
+        statement.setString(4, Heat);
+        statement.setString(5, Court);
         statement.executeUpdate();
+    }catch (Exception e){
+        System.out.println("Nu se adauga datele in tabela");
+    }
 
     }
 

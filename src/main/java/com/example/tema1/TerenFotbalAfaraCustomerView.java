@@ -97,7 +97,7 @@ public class TerenFotbalAfaraCustomerView implements Initializable {
                     {
                         Caldura="FALSE";
                     }
-                    System.out.println("ok introduce valori");
+
                     java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
                    // System.out.println(choice_box_ora.getValue().toString());
                     SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
