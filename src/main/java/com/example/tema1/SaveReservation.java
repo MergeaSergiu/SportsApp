@@ -59,7 +59,7 @@ public class SaveReservation {
         PreparedStatement statement;
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
-        statement =connection.prepareStatement("SELECT * from sportapp.reservation2 where Time_Schedule =?");
+        statement =connection.prepareStatement("SELECT * from sportapp.reservation2 where interval_orar =?");
         statement.setString(3,interval_orar);
         ResultSet user = statement.executeQuery();
         return user.next();
