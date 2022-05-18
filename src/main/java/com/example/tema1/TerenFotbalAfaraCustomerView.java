@@ -1,6 +1,5 @@
 package com.example.tema1;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -70,18 +69,18 @@ public class TerenFotbalAfaraCustomerView {
     private TextField text_username;
 
     @FXML
-    void Save_Reservation_Teren_Afara(ActionEvent event) {
+    void Save_Reservation_Teren_Afara() {
 
     }
 
     @FXML
-    void home_button(ActionEvent event) throws IOException {
+    void home_button() throws IOException {
         Main l = new Main();
         l.changeScene("FirstPage.fxml");
     }
 
     @FXML
-    void menu_courts_button(ActionEvent event) throws IOException {
+    void menu_courts_button() throws IOException {
         Main p = new Main();
         p.changeScene("CustomerView.fxml");
     }

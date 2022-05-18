@@ -1,105 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.CustomerViewController">
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.CustomerViewController">
    <children>
-      <AnchorPane layoutY="6.0" prefHeight="227.0" prefWidth="1200.0">
-         <children>
-            <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="584.0" prefWidth="1200.0" style="-fx-background-color: white;">
-               <children>
-                  <Label fx:id="numecentru" layoutX="424.0" layoutY="22.0" prefHeight="40.0" prefWidth="307.0" style="-fx-background-color: white;" text="        D &amp; S - Center" textAlignment="RIGHT" textFill="#250505">
-                     <font>
-                        <Font name="Segoe Print Bold" size="24.0" />
-                     </font>
-                  </Label>
-                  <AnchorPane layoutX="244.0" layoutY="71.0" prefHeight="200.0" prefWidth="398.0">
-                     <children>
-                        <ImageView fitHeight="193.0" fitWidth="325.0" layoutX="9.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@messi_ronaldo.jpg" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="teren_fotbal_afara" layoutX="136.0" layoutY="90.0" mnemonicParsing="false" onAction="#action_button_outside_football_court" prefHeight="66.0" prefWidth="159.0" text="Teren Fotbal Afara">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="14.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="642.0" layoutY="90.0" prefHeight="179.0" prefWidth="419.0">
-                     <children>
-                        <ImageView fitHeight="167.0" fitWidth="316.0" layoutX="42.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@balon.jpg" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="Teren_fotbal_acoperit" layoutX="265.0" layoutY="50.0" mnemonicParsing="false" onAction="#action_button_inside_footbal_court" prefHeight="66.0" prefWidth="165.0" text="Teren Fotbal Acoperit">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="14.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="507.0" layoutY="279.0" prefHeight="200.0" prefWidth="307.0">
-                     <children>
-                        <ImageView fitHeight="213.0" fitWidth="267.0" layoutX="40.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@baschet.jpg" />
-                           </image>
-                        </ImageView>
-                        <Button id="teren_baschet" fx:id="teren_baschet" layoutX="157.0" layoutY="110.0" mnemonicParsing="false" onAction="#action_button_basketball_court" prefHeight="66.0" prefWidth="159.0" text="Teren Baschet">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="14.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="843.0" layoutY="279.0" prefHeight="200.0" prefWidth="286.0">
-                     <children>
-                        <ImageView fitHeight="193.0" fitWidth="289.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@handbal.jpg" />
-                           </image>
-                        </ImageView>
-                        <Button id="teren_handbal" fx:id="teren_handbal" layoutX="118.0" layoutY="120.0" mnemonicParsing="false" onAction="#action_button_handbal_court" prefHeight="66.0" prefWidth="159.0" text="Teren Handbal">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="14.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="144.0" layoutY="269.0" prefHeight="235.0" prefWidth="322.0">
-                     <children>
-                        <ImageView fitHeight="206.0" fitWidth="325.0" layoutX="24.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@tenis.jpeg" />
-                           </image>
-                        </ImageView>
-                        <Button id="teren_tenis" fx:id="teren_tenis" layoutX="187.0" layoutY="45.0" mnemonicParsing="false" onAction="#action_button_tenis_court" prefHeight="66.0" prefWidth="159.0" text="Teren Tenis">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="14.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="141.0" prefWidth="145.0">
-                     <children>
-                        <Button fx:id="home_button" layoutX="32.0" layoutY="33.0" mnemonicParsing="false" onAction="#action_button_home" prefHeight="66.0" prefWidth="76.0" style="-fx-background-color: white;" text="Button" />
-                        <ImageView fitHeight="58.0" fitWidth="83.0" layoutX="36.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-         </children></AnchorPane>
+      <TableView layoutX="53.0" layoutY="59.0" prefHeight="396.0" prefWidth="966.0">
+        <columns>
+          <TableColumn prefWidth="135.99999618530273" text="Name" />
+          <TableColumn prefWidth="105.60002136230469" text="Date" />
+            <TableColumn minWidth="0.0" prefWidth="111.20001220703125" text="interval orar" />
+            <TableColumn prefWidth="97.5999755859375" text="tip teren" />
+            <TableColumn prefWidth="107.20001220703125" text="caldura" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

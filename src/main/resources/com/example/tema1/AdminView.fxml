@@ -1,57 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import java.net.URL?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="641.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.example.tema1.TableViewController">
-   <stylesheets>
-      <URL value="@tableview.css" />
-   </stylesheets>
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.AdminViewController">
    <children>
-      <TableView fx:id="studentsTable" layoutX="34.0" layoutY="157.0" prefHeight="265.0" prefWidth="574.0">
-         <columns>
-            <TableColumn fx:id="idCol" maxWidth="70.0" prefWidth="70.0" style="-fx-alignment: center;" text="ID" />
-            <TableColumn fx:id="nameCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center;" text="NAME" />
-            <TableColumn fx:id="birthCol" maxWidth="85.0" prefWidth="85.0" style="-fx-alignment: center;" text="BIRTH DATE" />
-            <TableColumn fx:id="adressCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center;" text="ADRESS" />
-            <TableColumn fx:id="emailCol" maxWidth="140.0" prefWidth="140.0" style="-fx-alignment: center;" text="EMAIL" />
-            <TableColumn fx:id="editCol" maxWidth="64.0" prefWidth="64.0" style="-fx-alignment: center;" text="NAME" />
-         </columns>
+      <TableView fx:id="TableView" layoutX="105.0" layoutY="223.0" prefHeight="355.0" prefWidth="990.0">
+        <columns>
+          <TableColumn fx:id="id_reservation" prefWidth="176.00001525878906" text="ID RESERVATION" />
+          <TableColumn fx:id="name" minWidth="4.800018310546875" prefWidth="173.60000610351562" text="NAME" />
+            <TableColumn fx:id="date" minWidth="4.800018310546875" prefWidth="137.5999755859375" text="DATE" />
+            <TableColumn fx:id="time_schedule" minWidth="4.800018310546875" prefWidth="172.79998779296875" text="TIME SCHEDULE" />
+            <TableColumn fx:id="heat" minWidth="4.800018310546875" prefWidth="169.5999755859375" text="HEAT" />
+            <TableColumn fx:id="court" minWidth="4.800018310546875" prefWidth="162.39990234375" text="COURT" />
+        </columns>
       </TableView>
-      <Pane layoutY="59.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Text layoutX="26.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Students Details" wrappingWidth="245.13671875">
+      <Pane layoutX="-14.0" layoutY="100.0" prefHeight="5.0" prefWidth="1208.0" style="-fx-background-color: BLACK;" />
+      <Text layoutX="22.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Details">
          <font>
-            <Font name="Bauhaus 93" size="32.0" />
+            <Font size="48.0" />
          </font>
       </Text>
-      <HBox alignment="CENTER" layoutX="602.0" layoutY="-1.0" prefHeight="36.0" prefWidth="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <FontAwesomeIconView glyphName="CLOSE" onMouseClicked="#close" size="20" styleClass="btn" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER_LEFT" layoutX="34.0" layoutY="73.0" prefHeight="76.0" prefWidth="200.0">
-         <children>
-            <FontAwesomeIconView fill="#2196f3" glyphName="USER_PLUS" onMouseClicked="#getAddView" size="45" styleClass="btn">
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
-            </FontAwesomeIconView>
-            <FontAwesomeIconView fill="#00e676" glyphName="REFRESH" layoutX="10.0" layoutY="65.0" onMouseClicked="#refreshTable" size="45" styleClass="btn">
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
-            </FontAwesomeIconView>
-            <FontAwesomeIconView fill="#455a64" glyphName="PRINT" layoutX="62.0" layoutY="65.0" onMouseClicked="#print" size="45" styleClass="btn" />
-         </children>
-      </HBox>
+      <ImageView fitHeight="66.0" fitWidth="67.0" layoutX="105.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@add.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="171.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@refresh.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="57.0" fitWidth="66.0" layoutX="215.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@printer.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

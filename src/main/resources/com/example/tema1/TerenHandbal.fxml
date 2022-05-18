@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.TerenHandbalCustomerView">
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.TerenHandbalCustomerView">
     <children>
         <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="93.0" prefWidth="127.0">
             <children>
@@ -37,12 +37,12 @@
         <TextField fx:id="text_username" layoutX="304.0" layoutY="132.0" prefHeight="41.0" prefWidth="366.0" />
         <AnchorPane layoutX="1047.0" layoutY="6.0" prefHeight="109.0" prefWidth="147.0">
             <children>
-                <Button fx:id="button_menu_page" layoutX="37.0" layoutY="18.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="80.0" style="-fx-background-color: transparent;" text="Button" />
-                <ImageView fx:id="back_image" fitHeight="62.0" fitWidth="80.0" layoutX="34.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="back_image" fitHeight="62.0" fitWidth="80.0" layoutX="60.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@back.png" />
                     </image>
                 </ImageView>
+                <Button fx:id="button_menu_page" layoutX="51.0" layoutY="14.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="80.0" style="-fx-background-color: transparent;" />
             </children>
         </AnchorPane>
         <CheckBox fx:id="check_caldura" layoutX="112.0" layoutY="378.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="162.0" style="-fx-background-color: orange;" text="Caldura">
