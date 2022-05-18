@@ -2,6 +2,7 @@ package com.example.tema1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -18,9 +19,18 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.spi.ResourceBundleControlProvider;
 
-public class TerenFotbalAfaraCustomerView {
+public class TerenFotbalAfaraCustomerView implements Initializable {
 
     PreparedStatement pst;
+    private  Connection connection;
+    private DatabaseConnection dbConnection;
+
+    public void initialize(URL url, ResourceBundle resourceBundle){
+
+        dbConnection = new DatabaseConnection();
+        connection =  dbConnection.getConnection();
+        choice_box_ora.getItems().addAll(ore);
+    }
 
 
     @FXML
@@ -42,9 +52,7 @@ public class TerenFotbalAfaraCustomerView {
     private ChoiceBox<String> choice_box_ora;
     private String[] ore = {"ora5_6","ora6_7","ora7_8","ora8_9"};
 
-    public void initialize(){
-        choice_box_ora.getItems().addAll(ore);
-    }
+
 
     @FXML
     private Label error_message;
@@ -102,7 +110,6 @@ public class TerenFotbalAfaraCustomerView {
             }
 
     }
-
 
     @FXML
     void home_button(/*ActionEvent event*/) throws  IOException {

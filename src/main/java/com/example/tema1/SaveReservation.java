@@ -9,8 +9,12 @@ public class SaveReservation {
 
 
     public static void addReservation(String username, Date Date, String Time_Schedule, String Heat, String Court) throws SQLException{
+
         PreparedStatement statement;
-        statement = DatabaseConnection.databaseLink.prepareStatement("INSERT INTO sportapp.rezervari( username,Date,Time_Schedule,Heat,Court) VALUES(?,?,?,?,?)");
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connection = connectNow.getConnection();
+
+        statement = connection.prepareStatement("INSERT INTO sportapp.rezervari(username,Date,Time_Schedule,Heat,Court) VALUES(?,?,?,?,?)");
 
         statement.setString(1,username);
         statement.setDate(2, (java.sql.Date) Date);
@@ -23,7 +27,9 @@ public class SaveReservation {
 
     public static boolean validateUser(String username) throws SQLException{
         PreparedStatement statement;
-        statement= DatabaseConnection.databaseLink.prepareStatement("SELECT * from sportapp.sign_up_table where username =?");
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connection = connectNow.getConnection();
+        statement= connection.prepareStatement("SELECT * from sportapp.sign_up_table where username =?");
         statement.setString(1,username);
         ResultSet user = statement.executeQuery();
         return user.next();
