@@ -49,7 +49,7 @@ public class CustomerViewController {
     }
 
     @FXML
-    void action_button_inside_footbal_court(ActionEvent event) throws IOException {
+    void action_button_inside_footbal_court(/*ActionEvent event*/) throws IOException {
         Main insidefootball = new Main();
         insidefootball.changeScene("TerenFotbalAcoperit.fxml");
     }
