@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class TerenTenisCustomerView {
 
@@ -63,6 +64,35 @@ public class TerenTenisCustomerView {
 
     @FXML
     void Save_Reservation_Tenis(ActionEvent event) {
+        String nume_teren= "Teren_Tenis";
+        try{
+            if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
+                error_message.setText("Please fill in all the fields");
+            }
+            else if(SaveReservation.validateUser(text_username.getText()) == false){
+                error_message.setText("Username does not exist!");
+            }else{
+                String Caldura;
+                if(check_caldura.isSelected()){
+                    Caldura="TRUE";
+                }
+                else
+                {
+                    Caldura="FALSE";
+                }
+
+                java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
+                // System.out.println(choice_box_ora.getValue().toString());
+                SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
+                error_message.setText("Rezervarea a fost adaugata cu succes");
+            }
+
+        } catch (SQLException e) {
+
+            error_message.setText("Something went wrong!");
+        }
+
+
 
     }
     @FXML

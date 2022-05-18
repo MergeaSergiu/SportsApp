@@ -6,7 +6,7 @@ public class DatabaseConnection {
     public static Connection databaseLink;
     //public static Object getConnection;
 
-    public Connection getConnection(){
+    public static Connection getConnection(){
         String databaseName = "sportapp";
         String databaseUser="root";
         String databasePassword = "2001";
