@@ -19,8 +19,8 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.spi.ResourceBundleControlProvider;
 
-public class TerenFotbalAfaraCustomerView implements Initializable {
-
+public class TerenFotbalAfaraCustomerView  {
+/*
     PreparedStatement pst;
     private  Connection connection;
     private DatabaseConnection dbConnection;
@@ -31,7 +31,7 @@ public class TerenFotbalAfaraCustomerView implements Initializable {
         connection =  dbConnection.getConnection();
         choice_box_ora.getItems().addAll(ore);
     }
-
+*/
 
     @FXML
     private ImageView back_image;
@@ -84,7 +84,6 @@ public class TerenFotbalAfaraCustomerView implements Initializable {
     @FXML
     public void Save_Reservation_Teren_Afara()  {
         String nume_teren= "Teren_Fotbal_Afara";
-        java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
             try{
                 if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
                     error_message.setText("Please fill in all the fields");
@@ -92,9 +91,6 @@ public class TerenFotbalAfaraCustomerView implements Initializable {
                 }
                 else if(SaveReservation.validateUser(text_username.getText()) == false){
                     error_message.setText("Username does not exist!");
-                    valid_message.setText("");
-                }else if ( SaveReservation.validateData(data) == true && SaveReservation.validateOra(choice_box_ora.getValue()) == true  && SaveReservation.validateCourt(nume_teren) == true )  {
-                    error_message.setText("Exista deja o rezervare pe aceasta data, ora si teren");
                     valid_message.setText("");
                 }else{
                     String Caldura;
@@ -106,8 +102,8 @@ public class TerenFotbalAfaraCustomerView implements Initializable {
                         Caldura="FALSE";
                     }
 
-
                    // System.out.println(choice_box_ora.getValue().toString());
+                    java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
                     SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
                     valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA!!");
                     error_message.setText("");

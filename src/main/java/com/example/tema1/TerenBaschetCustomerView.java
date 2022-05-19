@@ -16,6 +16,9 @@ import java.sql.SQLException;
 public class TerenBaschetCustomerView {
 
     @FXML
+    private Button afiseaza_review;
+
+    @FXML
     private ImageView back_image;
 
     @FXML
@@ -25,21 +28,16 @@ public class TerenBaschetCustomerView {
     private Button button_menu_page;
 
     @FXML
-    private Label errormessage;
-
-    @FXML
     private DatePicker calendar_data;
 
     @FXML
     private CheckBox check_caldura;
 
     @FXML
-    private ChoiceBox<String> choice_box_ora;
-    private String[] ore = {"ora5_6","ora6_7","ora7_8","ora8_9"};
+    private ChoiceBox<?> choice_box_ora;
 
-    public void initialize(){
-        choice_box_ora.getItems().addAll(ore);
-    }
+    @FXML
+    private Label error_message;
 
     @FXML
     private ImageView home_image;
@@ -50,10 +48,6 @@ public class TerenBaschetCustomerView {
     @FXML
     private Label label_name;
 
-
-    @FXML
-    private Label error_message;
-
     @FXML
     private Label label_numepagina;
 
@@ -61,10 +55,20 @@ public class TerenBaschetCustomerView {
     private Label label_selecteaza_data;
 
     @FXML
+    private Button posteaza_review;
+
+    @FXML
     private Button salveaza_rezervare;
 
     @FXML
+    private TextField text_review;
+
+    @FXML
     private TextField text_username;
+
+    @FXML
+    private TextField username_verify;
+
     @FXML
     private Label valid_message;
 
@@ -115,6 +119,21 @@ public class TerenBaschetCustomerView {
     void menu_courts_page(ActionEvent event) throws IOException {
         Main menu_page = new Main();
         menu_page.changeScene("CustomerView.fxml");
+    }
+
+    @FXML
+    void afiseaza_review(ActionEvent event) {
+        if(username_verify.getText().isEmpty() ){
+            error_message.setText("Introduceti un username!");
+        }
+        if else{
+
+        }
+    }
+
+    @FXML
+    void posteaza_review(ActionEvent event) {
+
     }
 
 }
