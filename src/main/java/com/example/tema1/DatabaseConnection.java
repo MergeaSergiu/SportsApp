@@ -1,17 +1,23 @@
 package com.example.tema1;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 public class DatabaseConnection {
 
     public static Connection databaseLink;
     //public static Object getConnection;
 
     public static Connection getConnection(){
-        String databaseName = "sportapp";
+        String databaseName = "test";
         String databaseUser="root";
-        String databasePassword = "2001";
-        String url = "jdbc:mysql://localhost:3306/" + databaseName;
-        //String url ="jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        String databasePassword = "1234";
+        //String url = "jdbc:mysql://localhost:3306/" + databaseName;
+        String url ="jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("E ok");
@@ -25,4 +31,22 @@ public class DatabaseConnection {
 
         return databaseLink;
     }
+
+
+    public static ObservableList<Reservations> getDatausers(){
+        Connection conn = getConnection();
+        ObservableList<Reservations> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from test.reservation2");
+            ResultSet rs = ((PreparedStatement) ps).executeQuery();
+
+            while (rs.next()){
+                list.add(new Reservations(rs.getString("username"), rs.getDate("date"), rs.getString("interval_orar"), rs.getString("caldura"), rs.getString("court")));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+
 }

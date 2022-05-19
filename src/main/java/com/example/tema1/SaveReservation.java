@@ -38,7 +38,7 @@ public class SaveReservation {
         PreparedStatement statement;
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
-        statement= connection.prepareStatement("SELECT * from sportapp.sign_up_table where username =?");
+        statement= connection.prepareStatement("SELECT * from sign_up_table where username =?");
         statement.setString(1,username);
         ResultSet user = statement.executeQuery();
         return user.next();
@@ -48,7 +48,7 @@ public class SaveReservation {
         PreparedStatement statement;
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
-        statement = connection.prepareStatement("SELECT * from sportapp.reservation2 where data =?");
+        statement = connection.prepareStatement("SELECT * from reservation2 where data =?");
         statement.setDate(2, (java.sql.Date) data);
         ResultSet user = statement.executeQuery();
         return user.next();
@@ -59,7 +59,7 @@ public class SaveReservation {
         PreparedStatement statement;
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
-        statement =connection.prepareStatement("SELECT * from sportapp.reservation2 where interval_orar =?");
+        statement =connection.prepareStatement("SELECT * from reservation2 where interval_orar =?");
         statement.setString(3,interval_orar);
         ResultSet user = statement.executeQuery();
         return user.next();
@@ -69,7 +69,7 @@ public class SaveReservation {
         PreparedStatement statement;
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
-        statement = connection.prepareStatement("SELECT * from sportapp.reservation where Court=?");
+        statement = connection.prepareStatement("SELECT * from reservation2 where Court=?");
         statement.setString(5,Court);
         ResultSet user = statement.executeQuery();
         return user.next();

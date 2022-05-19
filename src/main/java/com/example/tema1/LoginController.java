@@ -64,7 +64,7 @@ public class LoginController {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT count(1) FROM sportapp.sign_up_table WHERE username= '"+tf_username.getText()+"' AND password = '"+ encodePassword(tf_username.getText(),tf_password.getText()) +"'";
+        String verifyLogin = "SELECT count(1) FROM sign_up_table WHERE username= '"+tf_username.getText()+"' AND password = '"+ encodePassword(tf_username.getText(),tf_password.getText()) +"'";
         try{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
@@ -73,7 +73,7 @@ public class LoginController {
                 if(queryResult.getInt(1)==1){
                     //loginMessageLabel.setText("Congratulations!");
                     createAccountStage();
-                    if((tf_username.getText().equals("dani.neagoe@yahoo.com")==true)&&(tf_password.getText().equals("Wefwe9jnkk")==true)){
+                    if((tf_username.getText().equals("mergea_sergiu@yahoo.com")==true)&&(tf_password.getText().equals("1234")==true)){
                         Main l = new Main();
                         l.changeScene("AdminView.fxml");
                     }else {
