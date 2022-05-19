@@ -2,12 +2,7 @@ package com.example.tema1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
@@ -66,6 +61,19 @@ public class TerenTenisCustomerView {
     private Label valid_message;
 
     @FXML
+    private TextField username_verify;
+
+    @FXML
+    private TextField text_review;
+
+    @FXML
+    private Button posteaza_review;
+
+    @FXML
+    private Button afiseaza_review;
+
+
+    @FXML
     void Save_Reservation_Tenis(ActionEvent event) {
         String nume_teren= "Teren_Tenis";
         try{
@@ -112,6 +120,38 @@ public class TerenTenisCustomerView {
     void menu_page(ActionEvent event) throws IOException {
         Main menu_page = new Main();
         menu_page.changeScene("CustomerView.fxml");
+    }
+
+    public static void AlertBox(String s) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Mesaj pentru Review");
+        //alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText(s);
+        alert.showAndWait();
+    }
+
+    @FXML
+    void posteaza_review(ActionEvent event) throws SQLException {
+        if(username_verify.getText().isEmpty() ){
+            AlertBox("Introduceti un username!");
+        }
+        else if(text_review.getText().isEmpty())
+        {
+            AlertBox("Nu lasa sectiunea necompletata");
+        } else if (SaveReview.validateUser(username_verify.getText()) == false) {
+            AlertBox("Username-ul nu exista!");
+        }
+        else{
+            SaveReview.addReview(username_verify.getText(),text_review.getText());
+            //error_message.setText("Review-ul a fost adaugat");
+            AlertBox("Review-ul a fost adugat cu succes");
+        }
+
+    }
+
+    @FXML
+    void afiseaza_review(ActionEvent event) {
+
     }
 
 }

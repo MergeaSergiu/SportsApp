@@ -3,12 +3,7 @@ package com.example.tema1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
@@ -20,18 +15,10 @@ import java.util.ResourceBundle;
 import java.util.spi.ResourceBundleControlProvider;
 
 public class TerenFotbalAfaraCustomerView  {
-/*
-    PreparedStatement pst;
-    private  Connection connection;
-    private DatabaseConnection dbConnection;
 
-    public void initialize(URL url, ResourceBundle resourceBundle){
 
-        dbConnection = new DatabaseConnection();
-        connection =  dbConnection.getConnection();
-        choice_box_ora.getItems().addAll(ore);
-    }
-*/
+    @FXML
+    private Button afiseaza_review;
 
     @FXML
     private ImageView back_image;
@@ -51,14 +38,12 @@ public class TerenFotbalAfaraCustomerView  {
     @FXML
     private ChoiceBox<String> choice_box_ora;
     private String[] ore = {"ora5_6","ora6_7","ora7_8","ora8_9"};
-
-    @FXML
-    private Label valid_message;
-
+    public void initialize(){
+        choice_box_ora.getItems().addAll(ore);
+    }
 
     @FXML
     private Label error_message;
-
 
     @FXML
     private ImageView home_image;
@@ -76,10 +61,22 @@ public class TerenFotbalAfaraCustomerView  {
     private Label label_selecteaza_data;
 
     @FXML
+    private Button posteaza_review;
+
+    @FXML
     private Button salveaza_rezervare;
 
     @FXML
+    private TextField text_review;
+
+    @FXML
     private TextField text_username;
+
+    @FXML
+    private TextField username_verify;
+
+    @FXML
+    private Label valid_message;
 
     @FXML
     public void Save_Reservation_Teren_Afara()  {
@@ -128,5 +125,35 @@ public class TerenFotbalAfaraCustomerView  {
         menu_page.changeScene("CustomerView.fxml");
     }
 
+    public static void AlertBox(String s) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Mesaj pentru Review");
+        //alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText(s);
+        alert.showAndWait();
+    }
+
+    @FXML
+    void afiseaza_review(ActionEvent event) {
+
+    }
+
+    @FXML
+    void posteaza_review(ActionEvent event) throws SQLException {
+        if(username_verify.getText().isEmpty() ){
+            AlertBox("Introduceti un username!");
+        }
+        else if(text_review.getText().isEmpty())
+        {
+            AlertBox("Nu lasa sectiunea necompletata");
+        } else if (SaveReview.validateUser(username_verify.getText()) == false) {
+            AlertBox("Username-ul nu exista!");
+        }
+        else{
+            SaveReview.addReview(username_verify.getText(),text_review.getText());
+            //error_message.setText("Review-ul a fost adaugat");
+            AlertBox("Review-ul a fost adugat cu succes");
+        }
+    }
 
 }

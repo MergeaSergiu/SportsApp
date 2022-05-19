@@ -2,12 +2,7 @@ package com.example.tema1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
@@ -34,7 +29,11 @@ public class TerenBaschetCustomerView {
     private CheckBox check_caldura;
 
     @FXML
-    private ChoiceBox<?> choice_box_ora;
+    private ChoiceBox<String> choice_box_ora;
+    private String[] ore = {"ora5_6","ora6_7","ora7_8","ora8_9"};
+    public void initialize(){
+        choice_box_ora.getItems().addAll(ore);
+    }
 
     @FXML
     private Label error_message;
@@ -124,6 +123,14 @@ public class TerenBaschetCustomerView {
         menu_page.changeScene("CustomerView.fxml");
     }
 
+    public static void AlertBox(String s) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Mesaj pentru Review");
+        //alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText(s);
+        alert.showAndWait();
+    }
+
     @FXML
     void afiseaza_review(ActionEvent event) throws SQLException {
 
@@ -132,17 +139,18 @@ public class TerenBaschetCustomerView {
     @FXML
     void posteaza_review(ActionEvent event) throws SQLException {
         if(username_verify.getText().isEmpty() ){
-            error_message.setText("Introduceti un username!");
+            AlertBox("Introduceti un username!");
         }
         else if(text_review.getText().isEmpty())
         {
-            error_message.setText("Nu lasati sectiunea necompletata");
+            AlertBox("Nu lasa sectiunea necompletata");
         } else if (SaveReview.validateUser(username_verify.getText()) == false) {
-            error_message.setText("Username-ul nu exista");
+            AlertBox("Username-ul nu exista!");
         }
         else{
             SaveReview.addReview(username_verify.getText(),text_review.getText());
-            error_message.setText("Review-ul a fost adaugat");
+            //error_message.setText("Review-ul a fost adaugat");
+            AlertBox("Review-ul a fost adugat cu succes");
         }
 
     }

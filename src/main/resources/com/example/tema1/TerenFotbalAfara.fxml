@@ -75,5 +75,15 @@
             <Font name="Perpetua Titling MT Bold" size="14.0" />
          </font>
       </Label>
+      <TextField fx:id="text_review" layoutX="821.0" layoutY="397.0" prefHeight="93.0" prefWidth="266.0" />
+      <Label alignment="CENTER" layoutX="839.0" layoutY="371.0" prefHeight="26.0" prefWidth="240.0" text="SPUNE - NE PAREREA TA !!" textFill="#07385e">
+         <font>
+            <Font name="Perpetua Titling MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="821.0" layoutY="499.0" prefHeight="18.0" prefWidth="77.0" text="Username" />
+      <TextField fx:id="username_verify" layoutX="896.0" layoutY="495.0" prefHeight="26.0" prefWidth="191.0" />
+      <Button fx:id="posteaza_review" layoutX="821.0" layoutY="531.0" mnemonicParsing="false" onAction="#posteaza_review" prefHeight="30.0" prefWidth="118.0" text="Posteaza Review!" />
+      <Button fx:id="afiseaza_review" layoutX="960.0" layoutY="531.0" mnemonicParsing="false" onAction="#afiseaza_review" prefHeight="30.0" prefWidth="127.0" text="Afiseaza Review" />
    </children>
 </AnchorPane>

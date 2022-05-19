@@ -29,7 +29,11 @@ public class TerenFotbalAcoperitCustomerView {
     private CheckBox check_caldura;
 
     @FXML
-    private ChoiceBox<?> choice_box_ora;
+    private ChoiceBox<String> choice_box_ora;
+    private String[] ore = {"ora5_6","ora6_7","ora7_8","ora8_9"};
+    public void initialize(){
+        choice_box_ora.getItems().addAll(ore);
+    }
 
     @FXML
     private Label error_message;
@@ -111,7 +115,7 @@ public class TerenFotbalAcoperitCustomerView {
 
     public static void AlertBox(String s) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Message Here...");
+        alert.setTitle("Mesaj pentru review");
         //alert.setHeaderText("Look, an Information Dialog");
         alert.setContentText(s);
         alert.showAndWait();
