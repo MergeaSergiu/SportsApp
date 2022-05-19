@@ -1,5 +1,7 @@
 package com.example.tema1;
 
+import javafx.scene.control.TextField;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +20,7 @@ public class SaveReview {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
         try {
-            statement = connection.prepareStatement("INSERT INTO sportapp.review2 (username,Review) VALUES (?,?)");
+            statement = connection.prepareStatement("INSERT INTO sportapp.review2(username,Review) VALUES (?,?)");
 
             statement.setString(1, username);
             statement.setString(2, Review);

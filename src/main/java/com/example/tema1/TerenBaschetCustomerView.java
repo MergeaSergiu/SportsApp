@@ -40,6 +40,9 @@ public class TerenBaschetCustomerView {
     private Label error_message;
 
     @FXML
+    private Label error_review;
+
+    @FXML
     private ImageView home_image;
 
     @FXML
@@ -122,17 +125,25 @@ public class TerenBaschetCustomerView {
     }
 
     @FXML
-    void afiseaza_review(ActionEvent event) {
-        if(username_verify.getText().isEmpty() ){
-            error_message.setText("Introduceti un username!");
-        }
-        if else{
+    void afiseaza_review(ActionEvent event) throws SQLException {
 
-        }
     }
 
     @FXML
-    void posteaza_review(ActionEvent event) {
+    void posteaza_review(ActionEvent event) throws SQLException {
+        if(username_verify.getText().isEmpty() ){
+            error_message.setText("Introduceti un username!");
+        }
+        else if(text_review.getText().isEmpty())
+        {
+            error_message.setText("Nu lasati sectiunea necompletata");
+        } else if (SaveReview.validateUser(username_verify.getText()) == false) {
+            error_message.setText("Username-ul nu exista");
+        }
+        else{
+            SaveReview.addReview(username_verify.getText(),text_review.getText());
+            error_message.setText("Review-ul a fost adaugat");
+        }
 
     }
 
