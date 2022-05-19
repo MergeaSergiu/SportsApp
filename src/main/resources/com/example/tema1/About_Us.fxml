@@ -50,24 +50,12 @@
             <Font name="Bell MT Bold" size="17.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="125.0" layoutY="386.0" prefHeight="137.0" prefWidth="205.0">
+      <AnchorPane layoutX="125.0" layoutY="386.0" prefHeight="115.0" prefWidth="205.0">
          <children>
-            <ImageView fx:id="poza1" fitHeight="166.0" fitWidth="205.0" layoutX="3.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@fault_nigel.jpg" />
-               </image>
-            </ImageView>
+            <AnchorPane layoutX="14.0" layoutY="1.0" prefHeight="113.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="405.0" layoutY="386.0" prefHeight="107.0" prefWidth="164.0">
-         <children>
-            <ImageView fx:id="poza2" fitHeight="115.0" fitWidth="258.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@zidane.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
+      <AnchorPane layoutX="399.0" layoutY="390.0" prefHeight="107.0" prefWidth="164.0" />
       <Label fx:id="login_label" layoutX="751.0" layoutY="435.0" prefHeight="34.0" prefWidth="117.0" text="Already a member?" />
       <Label fx:id="sign_up_label" alignment="CENTER" layoutX="926.0" layoutY="435.0" prefHeight="34.0" prefWidth="109.0" text="New Member?" />
       <Button fx:id="log_in_button" layoutX="758.0" layoutY="470.0" mnemonicParsing="false" onAction="#log_in_page" prefHeight="56.0" prefWidth="100.0" text="Log in" />

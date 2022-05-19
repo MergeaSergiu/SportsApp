@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
+
 public class AboutUsController {
 
     @FXML
@@ -42,30 +44,26 @@ public class AboutUsController {
     private Label nume_centru;
 
     @FXML
-    private ImageView poza1;
-
-    @FXML
-    private ImageView poza2;
-
-    @FXML
     private Button sign_up_button;
 
     @FXML
     private Label sign_up_label;
-
     @FXML
-    void home_page_action(ActionEvent event) {
-
+    void home_page_action(ActionEvent event) throws IOException {
+        Main home_page = new Main();
+        home_page.changeScene("FirstPage.fxml");
     }
 
     @FXML
-    void log_in_page(ActionEvent event) {
-
+    void log_in_page(ActionEvent event) throws IOException {
+        Main log_in_page = new Main();
+        log_in_page.changeScene("Login.fxml");
     }
 
     @FXML
-    void sign_up_page(ActionEvent event) {
-
+    void sign_up_page(ActionEvent event) throws IOException {
+        Main sign_up_page = new Main();
+        sign_up_page.changeScene("sign_up.fxml");
     }
 
 }
