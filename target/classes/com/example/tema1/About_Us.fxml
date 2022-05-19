@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.AboutUsController">
+   <children>
+      <Label fx:id="nume_centru" alignment="CENTER" layoutX="442.0" layoutY="20.0" prefHeight="68.0" prefWidth="319.0" text="D &amp; S -Center">
+         <font>
+            <Font name="Segoe Print Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_numele_noastre" layoutX="125.0" layoutY="103.0" prefHeight="48.0" prefWidth="788.0" text="Aceasta baza sportiva a fost initiativa a 2 prieteni pasionati de fotbal: Mergea Sergiu si Neagoe Dan">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="125.0" layoutY="153.0" prefHeight="34.0" prefWidth="711.0" text="Regulile bazei sunt simple:">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="label1" layoutX="125.0" layoutY="203.0" prefHeight="28.0" prefWidth="667.0" text="1. Toata lumea vine de distractie, NU ESTE CHAMPIONS LEAGUE">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" layoutX="125.0" layoutY="244.0" prefHeight="28.0" prefWidth="684.0" text="2. Fair play -ul pe primul loc, NU VA DATI LA GIOALE">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="label3" layoutX="125.0" layoutY="281.0" prefHeight="28.0" prefWidth="684.0" text="3. Nu scuipati pe teren , NU SUNTEM LA FC COJEASCA IN LIGA 5">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="label4" layoutX="125.0" layoutY="315.0" prefHeight="28.0" prefWidth="667.0" text="4. Folositi un limbaj adecvat, NU INVOCATI MAMELE , ELE NU AU NICI O VINA">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="label5" layoutX="125.0" layoutY="347.0" prefHeight="28.0" prefWidth="667.0" text="5. Nu va rupeti picioarele, NU TOLERAM ASA CEVA:">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="125.0" layoutY="386.0" prefHeight="115.0" prefWidth="205.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="1.0" prefHeight="113.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="399.0" layoutY="390.0" prefHeight="107.0" prefWidth="164.0" />
+      <Label fx:id="login_label" layoutX="751.0" layoutY="435.0" prefHeight="34.0" prefWidth="117.0" text="Already a member?" />
+      <Label fx:id="sign_up_label" alignment="CENTER" layoutX="926.0" layoutY="435.0" prefHeight="34.0" prefWidth="109.0" text="New Member?" />
+      <Button fx:id="log_in_button" layoutX="758.0" layoutY="470.0" mnemonicParsing="false" onAction="#log_in_page" prefHeight="56.0" prefWidth="100.0" text="Log in" />
+      <Button fx:id="sign_up_button" layoutX="928.0" layoutY="470.0" mnemonicParsing="false" onAction="#sign_up_page" prefHeight="56.0" prefWidth="100.0" text="Sign_up" />
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="89.0" prefWidth="137.0">
+         <children>
+            <ImageView fx:id="menu_image" fitHeight="56.0" fitWidth="62.0" layoutX="35.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="home_page_button" layoutX="37.0" layoutY="13.0" mnemonicParsing="false" onAction="#home_page_action" prefHeight="62.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
