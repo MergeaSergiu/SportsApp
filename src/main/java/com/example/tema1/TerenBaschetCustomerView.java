@@ -132,8 +132,9 @@ public class TerenBaschetCustomerView {
     }
 
     @FXML
-    void afiseaza_review(ActionEvent event) throws SQLException {
-
+    void afiseaza_review(ActionEvent event) throws IOException {
+        Main afiseaza_review = new Main();
+        afiseaza_review.changeScene("TabelaReview.fxml");
     }
 
     @FXML

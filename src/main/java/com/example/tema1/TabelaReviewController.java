@@ -1,4 +1,4 @@
-/*package com.example.tema1;
+package com.example.tema1;
 
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -12,7 +12,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import jdk.nashorn.internal.runtime.RewriteException;
 
-public class TabelaReviewController {
+public class TabelaReviewController<index> {
 
     ObservableList<Review> dataList;
 
@@ -26,7 +26,7 @@ public class TabelaReviewController {
     private TextField filterField;
 
     @FXML
-    private TableView<?> table_users;
+    private TableView<Review> table_users;
 
     @FXML
     private TextField txt_id;
@@ -34,10 +34,21 @@ public class TabelaReviewController {
     @FXML
     private TextField txt_username;
 
+    int index = -1;
+
+
     @FXML
     void getSelected(MouseEvent event) {
+        index = table_users.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
 
+            return;
+        }
+        txt_id.setText(col_review.getCellData(index).toString());
+        txt_username.setText(col_username.getCellData(index).toString());
     }
+
+
 
     @FXML
     void search_user(KeyEvent event) {
@@ -47,7 +58,7 @@ public class TabelaReviewController {
 
         dataList = DatabaseConnection.getDatausers();
         table_users.setItems(dataList);
-        FilteredList<users> filteredData = new FilteredList<>(dataList, b -> true);
+        FilteredList<Review> filteredData = new FilteredList<>(dataList, b -> true);
         filterField.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(person -> {
                 if (newValue == null || newValue.isEmpty()) {
@@ -71,4 +82,3 @@ public class TabelaReviewController {
     }
 
 }
-*/
