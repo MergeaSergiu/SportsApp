@@ -3,7 +3,9 @@ package com.example.tema1;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -11,6 +13,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import jdk.nashorn.internal.runtime.RewriteException;
+
+import java.io.IOException;
 
 public class TabelaReviewController<index> {
 
@@ -33,6 +37,25 @@ public class TabelaReviewController<index> {
 
     @FXML
     private TextField txt_username;
+
+    @FXML
+    private Button tenis_button;
+
+    @FXML
+    private Button football_acoperit_button;
+
+    @FXML
+    private Button football_afara_button;
+
+    @FXML
+    private Button handbal_button;
+
+    @FXML
+    private Button backetball_button;
+
+    @FXML
+    private Button button_menu;
+
 
     int index = -1;
 
@@ -79,6 +102,43 @@ public class TabelaReviewController<index> {
         SortedList<Review> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(table_users.comparatorProperty());
         table_users.setItems(sortedData);
+    }
+
+    @FXML
+    void tenis_button_action(ActionEvent event) throws IOException {
+        Main tenis_button_action = new Main();
+        tenis_button_action.changeScene("TerenTenis.fxml");
+    }
+
+    @FXML
+    void handbal_button_action(ActionEvent event) throws IOException {
+        Main handbal_button_action = new Main();
+        handbal_button_action.changeScene("TerenHandbal.fxml");
+
+    }
+
+    @FXML
+    void fotball_afara_button_action(ActionEvent event) throws IOException {
+            Main fotbal_afara_button_action = new Main();
+            fotbal_afara_button_action.changeScene("TerenFotbalAfara.fxml");
+    }
+
+    @FXML
+    void football_acoperit_action(ActionEvent event) throws IOException {
+            Main footbal_acoperit_button_action = new Main();
+            footbal_acoperit_button_action.changeScene("TerenFotbalAcoperit.fxml");
+    }
+
+    @FXML
+    void basketball_menu_action(ActionEvent event) throws IOException {
+            Main basketball_menu_action = new Main();
+            basketball_menu_action.changeScene("TerenBaschet.fxml");
+    }
+
+    @FXML
+    void button_menu_action(ActionEvent event) throws IOException {
+            Main button_menu_action = new Main();
+            button_menu_action.changeScene("CustomerView.fxml");
     }
 
 }
