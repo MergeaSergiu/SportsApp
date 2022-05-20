@@ -14,7 +14,7 @@ public class SaveReservation {
     private DatabaseConnection connectNow ;
     private Connection connection ;
 
-    public static void addReservation(String username, Date Date, String Time_Schedule, String Heat, String Court) throws SQLException{
+    public static void addReservation(String username, Date data, String interval_orar, String caldura, String Court) throws SQLException{
 
         PreparedStatement statement;
         DatabaseConnection connectNow = new DatabaseConnection();
@@ -23,9 +23,9 @@ public class SaveReservation {
         statement = connection.prepareStatement("INSERT INTO sportapp.reservation2 (username,data,interval_orar,caldura,Court) VALUES (?,?,?,?,?)");
 
         statement.setString(1, username);
-        statement.setDate(2, (java.sql.Date) Date);
-        statement.setString(3, Time_Schedule);
-        statement.setString(4, Heat);
+        statement.setDate(2, (java.sql.Date) data);
+        statement.setString(3, interval_orar);
+        statement.setString(4, caldura);
         statement.setString(5, Court);
         statement.executeUpdate();
     }catch (Exception e){
@@ -43,7 +43,7 @@ public class SaveReservation {
         ResultSet user = statement.executeQuery();
         return user.next();
     }
-
+    /*
     public static boolean validateData(Date data) throws  SQLException{
 
         PreparedStatement statement;
@@ -66,17 +66,24 @@ public class SaveReservation {
         return user.next();
     }
 
-    public static boolean validateCourt(String Court) throws SQLException{
+
+
+*/
+
+    public static boolean validateExistedRow(Date data, String interval_orar, String Court) throws SQLException {
+
         PreparedStatement statement;
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
-        statement = connection.prepareStatement("SELECT * from sportapp.reservation2 where Court=?");
-        statement.setString(5,Court);
+
+        statement = connection.prepareStatement("SELECT * from sportapp.reservation2 where data = ?, interval_orar = ?,Court = ? ");
+        statement.setDate(1, (java.sql.Date) data);
+        statement.setString(2,interval_orar);
+        statement.setString(3,Court);
         ResultSet user = statement.executeQuery();
         return user.next();
+
     }
-
-
 
 }
 

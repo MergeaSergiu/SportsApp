@@ -83,6 +83,8 @@ public class TerenFotbalAcoperitCustomerView {
             else if(SaveReservation.validateUser(text_username.getText()) == false){
                 error_message.setText("Username does not exist!");
                 valid_message.setText("");
+            }else if(SaveReservation.validateExistedRow(java.sql.Date.valueOf(calendar_data.getValue()), choice_box_ora.getValue(),nume_teren)){
+                error_message.setText("Exista deja o rezervare cu numele asta");
             }else{
                 String Caldura;
                 if(check_caldura.isSelected()){

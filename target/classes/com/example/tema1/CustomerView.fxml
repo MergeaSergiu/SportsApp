@@ -33,7 +33,7 @@
                         </Button>
                         <AnchorPane layoutX="116.0" layoutY="23.0" prefHeight="179.0" prefWidth="419.0">
                            <children>
-                              <ImageView fitHeight="167.0" fitWidth="316.0" layoutX="42.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="167.0" fitWidth="316.0" layoutX="67.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@balon.jpg" />
                                  </image>
@@ -43,20 +43,6 @@
                                     <Font name="Calibri Bold Italic" size="14.0" />
                                  </font>
                               </Button>
-                              <AnchorPane layoutX="151.0" layoutY="75.0" prefHeight="200.0" prefWidth="286.0">
-                                 <children>
-                                    <ImageView fitHeight="193.0" fitWidth="289.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@handbal.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <Button id="teren_handbal" fx:id="teren_handbal" layoutX="118.0" layoutY="120.0" mnemonicParsing="false" onAction="#action_button_handbal_court" prefHeight="66.0" prefWidth="159.0" text="Teren Handbal">
-                                       <font>
-                                          <Font name="Calibri Bold Italic" size="14.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
                            </children>
                         </AnchorPane>
                      </children>
@@ -77,16 +63,16 @@
                   </AnchorPane>
                   <AnchorPane layoutX="52.0" layoutY="244.0" prefHeight="235.0" prefWidth="322.0">
                      <children>
-                        <ImageView fitHeight="206.0" fitWidth="325.0" layoutX="24.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@tenis.jpeg" />
-                           </image>
-                        </ImageView>
                         <Button id="teren_tenis" fx:id="teren_tenis" layoutX="187.0" layoutY="45.0" mnemonicParsing="false" onAction="#action_button_tenis_court" prefHeight="66.0" prefWidth="159.0" text="Teren Tenis">
                            <font>
                               <Font name="Calibri Bold Italic" size="14.0" />
                            </font>
                         </Button>
+                        <ImageView fitHeight="206.0" fitWidth="325.0" layoutX="-37.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tenis.jpeg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="114.0" prefWidth="145.0">
@@ -109,6 +95,20 @@
                   <TextField fx:id="username_verify" layoutX="929.0" layoutY="494.0" prefHeight="25.0" prefWidth="178.0" />
                   <Button fx:id="posteaza_review" layoutX="840.0" layoutY="525.0" mnemonicParsing="false" onAction="#posteaza_review" prefHeight="35.0" prefWidth="119.0" text="Posteaza_Review!" />
                   <Button fx:id="afiseaza_review" layoutX="988.0" layoutY="525.0" mnemonicParsing="false" onAction="#afiseaza_review" prefHeight="35.0" prefWidth="119.0" text="Afiseaza_Review" />
+                  <AnchorPane layoutX="887.0" layoutY="124.0" prefHeight="200.0" prefWidth="286.0">
+                     <children>
+                        <ImageView fitHeight="193.0" fitWidth="289.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@handbal.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button id="teren_handbal" fx:id="teren_handbal" layoutX="118.0" layoutY="120.0" mnemonicParsing="false" onAction="#action_button_handbal_court" prefHeight="66.0" prefWidth="159.0" text="Teren Handbal">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </children></AnchorPane>
