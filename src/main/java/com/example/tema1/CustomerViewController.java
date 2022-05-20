@@ -13,14 +13,7 @@ import java.sql.SQLException;
 public class CustomerViewController {
 
     @FXML
-    private Button Teren_fotbal_acoperit;
-
-    @FXML
     private Button afiseaza_review;
-
-    @FXML
-    private Button posteaza_review;
-
 
     @FXML
     private Button home_button;
@@ -29,7 +22,13 @@ public class CustomerViewController {
     private Label numecentru;
 
     @FXML
+    private Button posteaza_review;
+
+    @FXML
     private Button teren_baschet;
+
+    @FXML
+    private Button teren_fotbal_acoperit_button;
 
     @FXML
     private Button teren_fotbal_afara;
@@ -45,7 +44,6 @@ public class CustomerViewController {
 
     @FXML
     private TextField username_verify;
-
     @FXML
     void action_button_basketball_court(ActionEvent event) throws IOException {
         Main basketball = new Main();
@@ -64,10 +62,11 @@ public class CustomerViewController {
         l.changeScene("FirstPage.fxml");
     }
 
+
     @FXML
-    void action_button_inside_footbal_court(/*ActionEvent event*/) throws IOException {
-        Main insidefootball = new Main();
-        insidefootball.changeScene("TerenFotbalAcoperit.fxml");
+    void action_button_interior_football_court(ActionEvent event) throws IOException {
+        Main action_button_interior_fotball_court = new Main();
+        action_button_interior_fotball_court.changeScene("TerenFotbalAcoperit.fxml");
     }
 
     @FXML

@@ -48,6 +48,13 @@ public class AboutUsController {
 
     @FXML
     private Label sign_up_label;
+
+    @FXML
+    private ImageView image1;
+
+    @FXML
+    private ImageView image2;
+
     @FXML
     void home_page_action(ActionEvent event) throws IOException {
         Main home_page = new Main();

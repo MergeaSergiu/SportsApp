@@ -19,60 +19,42 @@
                         <Font name="Segoe Print Bold" size="24.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="109.0" layoutY="71.0" prefHeight="200.0" prefWidth="398.0">
+                  <AnchorPane layoutX="109.0" layoutY="71.0" prefHeight="163.0" prefWidth="220.0">
                      <children>
-                        <ImageView fitHeight="193.0" fitWidth="325.0" layoutX="9.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="151.0" fitWidth="234.0" layoutX="9.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@messi_ronaldo.jpg" />
                            </image>
                         </ImageView>
-                        <Button fx:id="teren_fotbal_afara" layoutX="136.0" layoutY="90.0" mnemonicParsing="false" onAction="#action_button_outside_football_court" prefHeight="66.0" prefWidth="159.0" text="Teren Fotbal Afara">
+                        <Button fx:id="teren_fotbal_afara" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#action_button_outside_football_court" prefHeight="144.0" prefWidth="220.0" style="-fx-background-color: transparent;">
                            <font>
                               <Font name="Calibri Bold Italic" size="14.0" />
                            </font>
                         </Button>
-                        <AnchorPane layoutX="116.0" layoutY="23.0" prefHeight="179.0" prefWidth="419.0">
-                           <children>
-                              <ImageView fitHeight="167.0" fitWidth="316.0" layoutX="67.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@balon.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Button fx:id="Teren_fotbal_acoperit" layoutX="265.0" layoutY="50.0" mnemonicParsing="false" onAction="#action_button_inside_footbal_court" prefHeight="66.0" prefWidth="165.0" text="Teren Fotbal Acoperit">
-                                 <font>
-                                    <Font name="Calibri Bold Italic" size="14.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="672.0" layoutY="65.0" prefHeight="200.0" prefWidth="307.0">
+                  <AnchorPane layoutX="672.0" layoutY="65.0" prefHeight="151.0" prefWidth="286.0">
                      <children>
-                        <ImageView fitHeight="213.0" fitWidth="267.0" layoutX="40.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="144.0" fitWidth="227.0" layoutX="52.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@baschet.jpg" />
                            </image>
                         </ImageView>
-                        <Button id="teren_baschet" fx:id="teren_baschet" layoutX="157.0" layoutY="110.0" mnemonicParsing="false" onAction="#action_button_basketball_court" prefHeight="66.0" prefWidth="159.0" text="Teren Baschet">
+                        <Button id="teren_baschet" fx:id="teren_baschet" layoutX="52.0" layoutY="3.0" mnemonicParsing="false" onAction="#action_button_basketball_court" prefHeight="144.0" prefWidth="227.0" style="-fx-background-color: transparent;">
                            <font>
                               <Font name="Calibri Bold Italic" size="14.0" />
                            </font>
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="52.0" layoutY="244.0" prefHeight="235.0" prefWidth="322.0">
+                  <AnchorPane layoutX="59.0" layoutY="247.0" prefHeight="170.0" prefWidth="259.0">
                      <children>
-                        <Button id="teren_tenis" fx:id="teren_tenis" layoutX="187.0" layoutY="45.0" mnemonicParsing="false" onAction="#action_button_tenis_court" prefHeight="66.0" prefWidth="159.0" text="Teren Tenis">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="14.0" />
-                           </font>
-                        </Button>
-                        <ImageView fitHeight="206.0" fitWidth="325.0" layoutX="-37.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="teren_fotbal_acoperit" fitHeight="144.0" fitWidth="202.0" layoutX="60.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@tenis.jpeg" />
+                              <Image url="@balon.jpg" />
                            </image>
                         </ImageView>
+                        <Button fx:id="teren_fotbal_acoperit_button" layoutX="61.0" layoutY="12.0" mnemonicParsing="false" onAction="#action_button_interior_football_court" prefHeight="133.0" prefWidth="202.0" style="-fx-background-color: transparent;" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="114.0" prefWidth="145.0">
@@ -95,20 +77,59 @@
                   <TextField fx:id="username_verify" layoutX="929.0" layoutY="494.0" prefHeight="25.0" prefWidth="178.0" />
                   <Button fx:id="posteaza_review" layoutX="840.0" layoutY="525.0" mnemonicParsing="false" onAction="#posteaza_review" prefHeight="35.0" prefWidth="119.0" text="Posteaza_Review!" />
                   <Button fx:id="afiseaza_review" layoutX="988.0" layoutY="525.0" mnemonicParsing="false" onAction="#afiseaza_review" prefHeight="35.0" prefWidth="119.0" text="Afiseaza_Review" />
-                  <AnchorPane layoutX="887.0" layoutY="124.0" prefHeight="200.0" prefWidth="286.0">
+                  <AnchorPane layoutX="65.0" layoutY="398.0" prefHeight="200.0" prefWidth="286.0">
                      <children>
-                        <ImageView fitHeight="193.0" fitWidth="289.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="125.0" fitWidth="209.0" layoutX="46.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@handbal.jpg" />
                            </image>
                         </ImageView>
-                        <Button id="teren_handbal" fx:id="teren_handbal" layoutX="118.0" layoutY="120.0" mnemonicParsing="false" onAction="#action_button_handbal_court" prefHeight="66.0" prefWidth="159.0" text="Teren Handbal">
+                        <Button id="teren_handbal" fx:id="teren_handbal" layoutX="49.0" layoutY="36.0" mnemonicParsing="false" onAction="#action_button_handbal_court" prefHeight="114.0" prefWidth="209.0" style="-fx-background-color: transparent;">
                            <font>
                               <Font name="Calibri Bold Italic" size="14.0" />
                            </font>
                         </Button>
                      </children>
                   </AnchorPane>
+                  <AnchorPane layoutX="626.0" layoutY="220.0" prefHeight="144.0" prefWidth="354.0">
+                     <children>
+                        <ImageView fitHeight="101.0" fitWidth="220.0" layoutX="98.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tenis.jpeg" />
+                           </image>
+                        </ImageView>
+                        <Button id="teren_tenis" fx:id="teren_tenis" alignment="CENTER" layoutX="96.0" layoutY="11.0" mnemonicParsing="false" onAction="#action_button_tenis_court" prefHeight="118.0" prefWidth="227.0" style="-fx-background-color: transparent;">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Label alignment="CENTER" layoutX="346.0" layoutY="106.0" prefHeight="58.0" prefWidth="202.0" text="Teren Fotbal Afara">
+                     <font>
+                        <Font name="Perpetua Titling MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="354.0" layoutY="315.0" prefHeight="43.0" prefWidth="194.0" text="Teren Fotbal Acoperit">
+                     <font>
+                        <Font name="Perpetua Titling MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="370.0" layoutY="460.0" prefHeight="35.0" prefWidth="178.0" text="Teren Tenis Acoperit">
+                     <font>
+                        <Font name="Perpetua Titling MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="995.0" layoutY="98.0" prefHeight="35.0" prefWidth="194.0" text="Teren Baschet">
+                     <font>
+                        <Font name="Perpetua Titling MT Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="1015.0" layoutY="257.0" prefHeight="35.0" prefWidth="145.0" text="Teren Tenis">
+                     <font>
+                        <Font name="Perpetua Titling MT Bold" size="12.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children></AnchorPane>
