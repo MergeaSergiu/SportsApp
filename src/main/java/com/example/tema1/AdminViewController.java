@@ -35,7 +35,7 @@ public class AdminViewController implements Initializable {
     private TableColumn<Reservations, String> col_username;
 
     @FXML
-    private TableColumn<Reservations, java.sql.Date> col_data;
+    private TableColumn<Reservations, Date> col_data;
 
     @FXML
     private TableColumn<Reservations, String> col_timeschedule;
@@ -106,13 +106,14 @@ public class AdminViewController implements Initializable {
 
             return;
         }
-        txt_username.setText(col_username.getCellData(index).toString());
-        txt_data.setValue(col_data.getCellData(index).toLocalDate());
-       // java.sql.Date txt_data = java.sql.Date.valueOf(String.valueOf(col_data.getCellData(index)));
+        txt_username.setText(col_username.getCellData(index));
+        //(Date)txt_data.setData(col_data.getCellData(index));
+        //java.sql.Date txt_data = java.sql.Date.valueOf(String.valueOf(col_data.getCellData(index)));
         //txt_data.DatePicker(col_data.getCellData(index));
-        txt_timeschedule.setText(col_timeschedule.getCellData(index).toString());
-        txt_heat.setText(col_heat.getCellData(index).toString());
-        txt_court.setText(col_court.getCellData(index).toString());
+        txt_data.setValue(col_data.getCellData(index).toLocalDate());
+        txt_timeschedule.setText(col_timeschedule.getCellData(index));
+        txt_heat.setText(col_heat.getCellData(index));
+        txt_court.setText(col_court.getCellData(index));
 
     }
 
@@ -122,12 +123,13 @@ public class AdminViewController implements Initializable {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
             String value1 = txt_username.getText();
-            Date value2 = Date.valueOf(String.valueOf(col_data.getColumns()));
+            //(java.sql.Date) value2 = Date.valueOf(String.valueOf(col_data.getValue().getColumns()));
+            //Date value2 = Date.getValue(col_data.);
+            java.sql.Date value2 = java.sql.Date.valueOf(txt_data.getValue());
             String value3 = txt_timeschedule.getText();
             String value4 = txt_heat.getText();
             String value5 = txt_court.getText();
-            String sql = "update reservation2 set username= '"+value1+"',data= '"+value2+"',interval_orar= '"+
-                    value3+"',caldura= '"+value4+"',Court= '"+value5+"' where username='"+value1+"' ";
+            /*??????*/String sql = "update reservation2 set username= '"+value1+"',data= '"+value2+"',interval_orar= '"+value3+"',caldura= '"+value4+"',Court= '"+value5+"' where username='"+value1+"' ";
             pst= connectDB.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Update");
@@ -196,9 +198,9 @@ public class AdminViewController implements Initializable {
                     return true; // Filter matches password
                 }else if (person.getTime_Schedule().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches password
-                }else if (String.valueOf(person.getHeat()).indexOf(lowerCaseFilter)!=-1){
+                }else if (person.getHeat().toLowerCase().indexOf(lowerCaseFilter)!=-1){
                     return true;// Filter matches email
-                }else if (person.getTime_Schedule().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                }else if (person.getCourt().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                 return true; // Filter matches password
                 }
                 else

@@ -32,21 +32,38 @@ public class DatabaseConnection {
         return databaseLink;
     }
 
-
+/*
     public static ObservableList<Reservations> getDatausers(){
         Connection conn = getConnection();
         ObservableList<Reservations> list = FXCollections.observableArrayList();
         try {
-            PreparedStatement ps = conn.prepareStatement("select * from test.reservation2");
-            ResultSet rs = ((PreparedStatement) ps).executeQuery();
+            PreparedStatement ps = conn.prepareStatement("select * from reservation2");
+            ResultSet rs = ps.executeQuery();
 
             while (rs.next()){
-                list.add(new Reservations(rs.getString("username"), rs.getDate("date"), rs.getString("interval_orar"), rs.getString("caldura"), rs.getString("court")));
+                list.add(new Reservations(rs.getString("username"), rs.getDate("data"), rs.getString("interval_orar"), rs.getString("caldura"), rs.getString("Court")));
             }
         } catch (Exception e) {
         }
         return list;
     }
+*/
+
+        public static ObservableList<Reservations> getDatausers(){
+            Connection conn = getConnection();
+            ObservableList<Reservations> list = FXCollections.observableArrayList();
+            try {
+                PreparedStatement ps = conn.prepareStatement("select * from reservation2");
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()){
+                    list.add(new Reservations(rs.getString("username"), rs.getDate("data"), rs.getString("interval_orar"), rs.getString("caldura"), rs.getString("Court")));
+                    System.out.println("E bine 1");
+                }
+            } catch (Exception e) {
+            }
+            return list;
+        }
 
 
 }
