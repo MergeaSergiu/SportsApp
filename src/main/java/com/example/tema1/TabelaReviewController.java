@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import jdk.nashorn.internal.runtime.RewriteException;
@@ -56,6 +57,23 @@ public class TabelaReviewController<index> {
     @FXML
     private Button button_menu;
 
+    @FXML
+    private ImageView menu_image;
+
+    @FXML
+    private ImageView minge_basket;
+
+    @FXML
+    private ImageView minge_fotbal_acoperit;
+
+    @FXML
+    private ImageView minge_fotbal_afara;
+
+    @FXML
+    private ImageView minge_handbal;
+
+    @FXML
+    private ImageView minge_tenis;
 
     int index = -1;
 
