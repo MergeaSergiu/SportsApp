@@ -128,7 +128,9 @@ public class TerenFotbalAcoperitCustomerView {
     }
 
     @FXML
-    void afiseaza_review(ActionEvent event) {
+    void afiseaza_review(ActionEvent event) throws IOException {
+        Main afiseaza_review = new Main();
+        afiseaza_review.changeScene("TabelaReview.fxml");
 
     }
 
