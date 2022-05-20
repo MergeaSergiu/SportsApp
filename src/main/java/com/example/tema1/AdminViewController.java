@@ -1,5 +1,4 @@
 package com.example.tema1;
-
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.Date;
@@ -76,11 +75,11 @@ public class AdminViewController implements Initializable {
     ResultSet rs = null;
     PreparedStatement pst = null;
 
-
+    @FXML
     public void Add_users (){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String sql = "insert into users (username,password,email,type)values(?,?,?,? )";
+        String sql = "insert into reservation2 (username,data,interval_orar,caldura,Court)values(?,?,?,?,? )";
         try {
             pst = connectDB.prepareStatement(sql);
             pst.setString(1, txt_username.getText());
@@ -108,14 +107,16 @@ public class AdminViewController implements Initializable {
             return;
         }
         txt_username.setText(col_username.getCellData(index).toString());
-        //txt_data.setValue(col_data.getCellData(index));
-        java.sql.Date txt_data = java.sql.Date.valueOf(String.valueOf(col_data.getCellData(index)));
+        txt_data.setValue(col_data.getCellData(index).toLocalDate());
+       // java.sql.Date txt_data = java.sql.Date.valueOf(String.valueOf(col_data.getCellData(index)));
+        //txt_data.DatePicker(col_data.getCellData(index));
         txt_timeschedule.setText(col_timeschedule.getCellData(index).toString());
         txt_heat.setText(col_heat.getCellData(index).toString());
         txt_court.setText(col_court.getCellData(index).toString());
 
     }
 
+    @FXML
     public void Edit (){
         try {
             DatabaseConnection connectNow = new DatabaseConnection();
@@ -125,7 +126,7 @@ public class AdminViewController implements Initializable {
             String value3 = txt_timeschedule.getText();
             String value4 = txt_heat.getText();
             String value5 = txt_court.getText();
-            String sql = "update reservation2 set username= '"+value1+"',date= '"+value2+"',interval_orar= '"+
+            String sql = "update reservation2 set username= '"+value1+"',data= '"+value2+"',interval_orar= '"+
                     value3+"',caldura= '"+value4+"',Court= '"+value5+"' where username='"+value1+"' ";
             pst= connectDB.prepareStatement(sql);
             pst.execute();
@@ -138,10 +139,11 @@ public class AdminViewController implements Initializable {
 
     }
 
+    @FXML
     public void Delete(){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String sql = "delete from users where user_id = ?";
+        String sql = "delete from reservation2 where username = ?";
         try {
             pst = connectDB.prepareStatement(sql);
             pst.setString(1, txt_username.getText());
@@ -155,13 +157,13 @@ public class AdminViewController implements Initializable {
 
     }
 
-
+    @FXML
     public void UpdateTable(){
         col_username.setCellValueFactory(new PropertyValueFactory<Reservations,String>("username"));
         col_data.setCellValueFactory(new PropertyValueFactory<Reservations,Date>("data"));
         col_timeschedule.setCellValueFactory(new PropertyValueFactory<Reservations,String>("interval_orar"));
         col_heat.setCellValueFactory(new PropertyValueFactory<Reservations,String>("caldura"));
-        col_court.setCellValueFactory(new PropertyValueFactory<Reservations,String>("court"));
+        col_court.setCellValueFactory(new PropertyValueFactory<Reservations,String>("Court"));
 
         listM = DatabaseConnection.getDatausers();
         table_users.setItems(listM);
@@ -173,10 +175,10 @@ public class AdminViewController implements Initializable {
     @FXML
     void search_user() {
         col_username.setCellValueFactory(new PropertyValueFactory<Reservations,String>("username"));
-        col_data.setCellValueFactory(new PropertyValueFactory<Reservations,Date>("username"));
-        col_timeschedule.setCellValueFactory(new PropertyValueFactory<Reservations,String>("password"));
-        col_heat.setCellValueFactory(new PropertyValueFactory<Reservations,String>("email"));
-        col_court.setCellValueFactory(new PropertyValueFactory<Reservations,String>("type"));
+        col_data.setCellValueFactory(new PropertyValueFactory<Reservations,Date>("data"));
+        col_timeschedule.setCellValueFactory(new PropertyValueFactory<Reservations,String>("interval_orar"));
+        col_heat.setCellValueFactory(new PropertyValueFactory<Reservations,String>("caldura"));
+        col_court.setCellValueFactory(new PropertyValueFactory<Reservations,String>("Court"));
 
         dataList = DatabaseConnection.getDatausers();
         table_users.setItems(dataList);
