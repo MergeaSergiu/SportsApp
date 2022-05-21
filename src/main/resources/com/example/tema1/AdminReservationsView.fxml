@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.AdminViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.AdminReservationsViewController">
     <children>
         <AnchorPane layoutX="-1.0" prefHeight="600.0" prefWidth="528.0" style="-fx-background-color: #28252e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -26,6 +26,12 @@
                 <TextField fx:id="txt_court" layoutX="120.0" layoutY="286.0" prefHeight="46.0" prefWidth="302.0" promptText="court" />
                 <TextField fx:id="txt_username" layoutX="120.0" layoutY="14.0" onKeyReleased="#search_user" prefHeight="40.0" prefWidth="302.0" promptText="username" />
             <DatePicker fx:id="txt_data" layoutX="119.0" layoutY="74.0" prefHeight="46.0" prefWidth="302.0" promptText="data" />
+            <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="home_button" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#home_button_action" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: transparent;" />
             </children>
         </AnchorPane>
         <TableView fx:id="table_users" layoutX="560.0" layoutY="92.0" onMouseClicked="#getSelected" prefHeight="474.0" prefWidth="613.0">

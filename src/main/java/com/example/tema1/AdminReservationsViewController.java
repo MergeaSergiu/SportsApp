@@ -1,23 +1,19 @@
 package com.example.tema1;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
+
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.PieChart;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javax.swing.JOptionPane;
 
@@ -25,7 +21,7 @@ import javax.swing.JOptionPane;
  *
  * @author amir
  */
-public class AdminViewController implements Initializable {
+public class AdminReservationsViewController implements Initializable {
 
 
     @FXML
@@ -63,6 +59,8 @@ public class AdminViewController implements Initializable {
     @FXML
     private TextField filterField;
 
+    @FXML
+    private Button home_button;
 
     ObservableList<Reservations> listM;
     ObservableList<Reservations> dataList;
@@ -216,6 +214,12 @@ public class AdminViewController implements Initializable {
         SortedList<Reservations> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(table_users.comparatorProperty());
         table_users.setItems(sortedData);
+    }
+
+    @FXML
+    private void home_button_action() throws IOException {
+        Main m = new Main();
+        m.changeScene("MainPageAdmin.fxml");
     }
 
     @Override

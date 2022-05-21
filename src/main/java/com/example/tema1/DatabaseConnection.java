@@ -66,4 +66,20 @@ public class DatabaseConnection {
         }
 
 
+    public static ObservableList<Users> getDatausers2(){
+        Connection conn = getConnection();
+        ObservableList<Users> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from sign_up_table");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                list.add(new Users(rs.getString("username"), rs.getString("password")));
+                System.out.println("E bine 1");
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
 }
