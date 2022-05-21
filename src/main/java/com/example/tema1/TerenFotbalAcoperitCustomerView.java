@@ -109,6 +109,7 @@ public class TerenFotbalAcoperitCustomerView {
         } catch (SQLException e) {
 
             error_message.setText("Something went wrong!");
+
         }
 
     }
