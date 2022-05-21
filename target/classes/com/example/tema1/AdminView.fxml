@@ -24,7 +24,7 @@
                 <TextField fx:id="txt_timeschedule" layoutX="120.0" layoutY="140.0" prefHeight="46.0" prefWidth="302.0" promptText="time schedule" />
                 <TextField fx:id="txt_heat" layoutX="119.0" layoutY="211.0" prefHeight="46.0" prefWidth="302.0" promptText="heat" />
                 <TextField fx:id="txt_court" layoutX="120.0" layoutY="286.0" prefHeight="46.0" prefWidth="302.0" promptText="court" />
-                <TextField fx:id="txt_username" layoutX="120.0" layoutY="14.0" prefHeight="40.0" prefWidth="302.0" promptText="username" />
+                <TextField fx:id="txt_username" layoutX="120.0" layoutY="14.0" onKeyReleased="#search_user" prefHeight="40.0" prefWidth="302.0" promptText="username" />
             <DatePicker fx:id="txt_data" layoutX="119.0" layoutY="74.0" prefHeight="46.0" prefWidth="302.0" promptText="data" />
             </children>
         </AnchorPane>

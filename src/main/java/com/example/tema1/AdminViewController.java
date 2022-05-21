@@ -110,7 +110,7 @@ public class AdminViewController implements Initializable {
         //(Date)txt_data.setData(col_data.getCellData(index));
         //java.sql.Date txt_data = java.sql.Date.valueOf(String.valueOf(col_data.getCellData(index)));
         //txt_data.DatePicker(col_data.getCellData(index));
-        txt_data.setValue(col_data.getCellData(index).toLocalDate());
+        txt_data.setUserData(col_data.getCellData(index));
         txt_timeschedule.setText(col_timeschedule.getCellData(index));
         txt_heat.setText(col_heat.getCellData(index));
         txt_court.setText(col_court.getCellData(index));
@@ -162,13 +162,20 @@ public class AdminViewController implements Initializable {
     @FXML
     public void UpdateTable(){
         col_username.setCellValueFactory(new PropertyValueFactory<Reservations,String>("username"));
+        System.out.println("E ok2");
         col_data.setCellValueFactory(new PropertyValueFactory<Reservations,Date>("data"));
+        System.out.println("E ok3");
         col_timeschedule.setCellValueFactory(new PropertyValueFactory<Reservations,String>("interval_orar"));
+        System.out.println("E ok4");
         col_heat.setCellValueFactory(new PropertyValueFactory<Reservations,String>("caldura"));
+        System.out.println("E ok5");
         col_court.setCellValueFactory(new PropertyValueFactory<Reservations,String>("Court"));
+        System.out.println("E ok6");
 
         listM = DatabaseConnection.getDatausers();
+        System.out.println("E ok7");
         table_users.setItems(listM);
+        System.out.println("E ok8");
     }
 
 
@@ -176,10 +183,10 @@ public class AdminViewController implements Initializable {
 
     @FXML
     void search_user() {
-        col_username.setCellValueFactory(new PropertyValueFactory<Reservations,String>("username"));
-        col_data.setCellValueFactory(new PropertyValueFactory<Reservations,Date>("data"));
-        col_timeschedule.setCellValueFactory(new PropertyValueFactory<Reservations,String>("interval_orar"));
-        col_heat.setCellValueFactory(new PropertyValueFactory<Reservations,String>("caldura"));
+        col_username.setCellValueFactory(new PropertyValueFactory<Reservations,String>("Name"));
+        col_data.setCellValueFactory(new PropertyValueFactory<Reservations,Date>("date"));
+        col_timeschedule.setCellValueFactory(new PropertyValueFactory<Reservations,String>("Time_Schedule"));
+        col_heat.setCellValueFactory(new PropertyValueFactory<Reservations,String>("heat"));
         col_court.setCellValueFactory(new PropertyValueFactory<Reservations,String>("Court"));
 
         dataList = DatabaseConnection.getDatausers();
@@ -194,17 +201,16 @@ public class AdminViewController implements Initializable {
 
                 if (person.getName().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
                     return true; // Filter matches username
-                } else if (person.getDate()!= null) {
+                } else if (person.getDate()== null) {
                     return true; // Filter matches password
                 }else if (person.getTime_Schedule().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches password
                 }else if (person.getHeat().toLowerCase().indexOf(lowerCaseFilter)!=-1){
                     return true;// Filter matches email
-                }else if (person.getCourt().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                return true; // Filter matches password
-                }
+                }else if (person.getCourt().toLowerCase().indexOf(lowerCaseFilter) != -1)
+                    return true;// Filter matches email
                 else
-                    return false; // Does not match.
+                    return false; // Does not match..
             });
         });
         SortedList<Reservations> sortedData = new SortedList<>(filteredData);

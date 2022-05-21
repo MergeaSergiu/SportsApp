@@ -4,25 +4,25 @@ import java.sql.Time;
 import java.util.Date;
 
 public class Reservations {
- private String username;
+ private String Username;
  private Date Date;
  private String Time_Schedule;
  private String Heat;
  private String Court;
 
  public Reservations(String username, Date Date, String Time_Schedule,String Heat, String Court){
-     this.username = username;
+     this.Username = username;
      this.Date = Date;
      this.Time_Schedule = Time_Schedule;
      this.Heat = Heat;
      this.Court = Court;
  }
  public void setName(String Name){
-     this.username = Name;
+     this.Username = Name;
  }
 
  public String getName(){
-     return this.username;
+     return this.Username;
  }
 
  public void setDate(Date Date){
