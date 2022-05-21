@@ -75,7 +75,7 @@ public class LoginController {
                     createAccountStage();
                     if((tf_username.getText().equals("mergea_sergiu@yahoo.com")==true)&&(tf_password.getText().equals("1234")==true)){
                         Main l = new Main();
-                        l.changeScene("AdminView.fxml");
+                        l.changeScene("MainPageAdmin.fxml");
                     }else {
                         Main l = new Main();
                         l.changeScene("CustomerView.fxml");
