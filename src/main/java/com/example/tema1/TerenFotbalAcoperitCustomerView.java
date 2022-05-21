@@ -103,6 +103,7 @@ public class TerenFotbalAcoperitCustomerView {
                     valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA!!");
                     error_message.setText("");
                 }
+
                 }
 
         } catch (SQLException e) {
