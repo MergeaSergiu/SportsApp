@@ -96,10 +96,15 @@ public class TerenTenisCustomerView {
                 }
 
                 java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
-                // System.out.println(choice_box_ora.getValue().toString());
-                SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
-               valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA");
-               error_message.setText("");
+                if(SaveReservation.validateReservation(data,choice_box_ora.getValue().toString(),nume_teren)){
+                    error_message.setText("Rezervarea exista deja in baza de date");
+                    valid_message.setText("");
+                }
+                else {
+                    SaveReservation.addReservation(text_username.getText(), data, choice_box_ora.getValue().toString(), Caldura, nume_teren);
+                    valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA");
+                    error_message.setText("");
+                }
             }
 
         } catch (SQLException e) {

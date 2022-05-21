@@ -87,8 +87,6 @@ public class TerenBaschetCustomerView {
                 error_message.setText("Username does not exist!");
                 valid_message.setText("");
 
-            }else if(SaveReservation.validateExistedRow(java.sql.Date.valueOf(calendar_data.getValue()), choice_box_ora.getValue(),nume_teren)){
-                error_message.setText("Exista deja o rezervare cu numele asta");
             }else{
                 String Caldura;
                 if(check_caldura.isSelected()){
@@ -101,9 +99,14 @@ public class TerenBaschetCustomerView {
 
                 java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
                 // System.out.println(choice_box_ora.getValue().toString());
-                SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
-                error_message.setText("");
-                valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA!!");
+                if(SaveReservation.validateReservation(data,choice_box_ora.getValue().toString(),nume_teren)){
+                    error_message.setText("Rezervarea exista deja in baza de date");
+                    valid_message.setText("");
+                }else {
+                    SaveReservation.addReservation(text_username.getText(), data, choice_box_ora.getValue().toString(), Caldura, nume_teren);
+                    error_message.setText("");
+                    valid_message.setText("Rezervarea a fost adaugata in baza de date");
+                }
             }
 
         } catch (SQLException e) {

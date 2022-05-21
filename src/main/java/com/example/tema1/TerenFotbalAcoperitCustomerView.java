@@ -83,8 +83,6 @@ public class TerenFotbalAcoperitCustomerView {
             else if(SaveReservation.validateUser(text_username.getText()) == false){
                 error_message.setText("Username does not exist!");
                 valid_message.setText("");
-            }else if(SaveReservation.validateExistedRow(java.sql.Date.valueOf(calendar_data.getValue()), choice_box_ora.getValue(),nume_teren)){
-                error_message.setText("Exista deja o rezervare cu numele asta");
             }else{
                 String Caldura;
                 if(check_caldura.isSelected()){
@@ -96,11 +94,16 @@ public class TerenFotbalAcoperitCustomerView {
                 }
 
                 java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
-
-                SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
-                valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA!!");
-                error_message.setText("");
-            }
+                if(SaveReservation.validateReservation(data,choice_box_ora.getValue(),nume_teren)){
+                    error_message.setText("Rezervarea exista deja in baza de date");
+                    valid_message.setText("");
+                }
+                else {
+                    SaveReservation.addReservation(text_username.getText(), data, choice_box_ora.getValue().toString(), Caldura, nume_teren);
+                    valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA!!");
+                    error_message.setText("");
+                }
+                }
 
         } catch (SQLException e) {
 

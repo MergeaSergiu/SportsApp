@@ -2,10 +2,7 @@ package com.example.tema1;
 
 
 
-import javafx.scene.chart.PieChart;
-
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.Date;
 
 public class SaveReservation {
@@ -32,7 +29,9 @@ public class SaveReservation {
         System.out.println("Nu se adauga datele in tabela");
     }
 
+
     }
+
 
     public static boolean validateUser(String username) throws SQLException{
         PreparedStatement statement;
@@ -43,47 +42,19 @@ public class SaveReservation {
         ResultSet user = statement.executeQuery();
         return user.next();
     }
-    /*
-    public static boolean validateData(Date data) throws  SQLException{
-
+    public static boolean validateReservation(Date data,String interval_orar,String Court) throws SQLException {
         PreparedStatement statement;
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
-        statement = connection.prepareStatement("SELECT * from sportapp.reservation2 where data =?");
-        statement.setDate(2, (java.sql.Date) data);
-        ResultSet user = statement.executeQuery();
-        return user.next();
-
-    }
-
-    public  static boolean validateOra(String interval_orar) throws SQLException{
-        PreparedStatement statement;
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connection = connectNow.getConnection();
-        statement =connection.prepareStatement("SELECT * from sportapp.reservation2 where interval_orar =?");
-        statement.setString(3,interval_orar);
-        ResultSet user = statement.executeQuery();
-        return user.next();
-    }
-
-
-
-*/
-
-    public static boolean validateExistedRow(Date data, String interval_orar, String Court) throws SQLException {
-
-        PreparedStatement statement;
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connection = connectNow.getConnection();
-
-        statement = connection.prepareStatement("SELECT * from sportapp.reservation2 where data =?, interval_orar =? ,Court = ?");
+        statement = connection.prepareStatement("SELECT * from sportapp.reservation2 where (data,interval_orar,Court) = (?,?,?)");
         statement.setDate(1, (java.sql.Date) data);
         statement.setString(2,interval_orar);
         statement.setString(3,Court);
         ResultSet user = statement.executeQuery();
-        return user.next();
-
+        return  user.next();
     }
+
+
 
 }
 
