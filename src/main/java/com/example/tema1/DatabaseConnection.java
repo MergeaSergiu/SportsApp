@@ -37,7 +37,7 @@ public class DatabaseConnection {
         Connection conn = getConnection();
         ObservableList<Review> list = FXCollections.observableArrayList();
         try {
-            PreparedStatement ps = conn.prepareStatement("select * from review2");
+            PreparedStatement ps = conn.prepareStatement("select * from sportapp.review2");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()){

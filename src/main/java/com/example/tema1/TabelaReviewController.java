@@ -5,6 +5,7 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -16,8 +17,10 @@ import javafx.scene.input.MouseEvent;
 import jdk.nashorn.internal.runtime.RewriteException;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class TabelaReviewController<index> {
+public class TabelaReviewController<index> implements Initializable {
 
     ObservableList<Review> dataList;
 
@@ -92,11 +95,11 @@ public class TabelaReviewController<index> {
 
 
     @FXML
-    void search_user(KeyEvent event) {
+    private void search_user() {
         col_username.setCellValueFactory(new PropertyValueFactory<Review,String>("username"));
         col_review.setCellValueFactory(new PropertyValueFactory<Review,String>("Review"));
 
-
+/*
         dataList = DatabaseConnection.getDatausers();
         table_users.setItems(dataList);
         FilteredList<Review> filteredData = new FilteredList<>(dataList, b -> true);
@@ -120,7 +123,33 @@ public class TabelaReviewController<index> {
         SortedList<Review> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(table_users.comparatorProperty());
         table_users.setItems(sortedData);
+        */
+
+        dataList = DatabaseConnection.getDatausers();
+        table_users.setItems(dataList);
+        FilteredList<Review> filteredData = new FilteredList<>(dataList, b -> true);
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(person -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (person.getUsername().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+                    return true; // Filter matches username
+                } else if (person.getReview().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches password
+                }
+                else
+                    return false; // Does not match..
+            });
+        });
+        SortedList<Review> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(table_users.comparatorProperty());
+        table_users.setItems(sortedData);
     }
+
+
 
     @FXML
     void tenis_button_action(ActionEvent event) throws IOException {
@@ -158,5 +187,15 @@ public class TabelaReviewController<index> {
             Main button_menu_action = new Main();
             button_menu_action.changeScene("CustomerView.fxml");
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+        search_user();
+        // Code Source in description
+    }
+
+
+
 
 }
