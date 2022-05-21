@@ -76,7 +76,7 @@ public class SaveReservation {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
 
-        statement = connection.prepareStatement("SELECT * from sportapp.reservation2 where data = ?, interval_orar = ?,Court = ? ");
+        statement = connection.prepareStatement("SELECT * from sportapp.reservation2 where data =?, interval_orar =? ,Court = ?");
         statement.setDate(1, (java.sql.Date) data);
         statement.setString(2,interval_orar);
         statement.setString(3,Court);
