@@ -1,6 +1,13 @@
 package com.example.tema1;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import jdk.nashorn.internal.runtime.RewriteException;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 public class DatabaseConnection {
 
     public static Connection databaseLink;
@@ -24,5 +31,20 @@ public class DatabaseConnection {
         }
 
         return databaseLink;
+    }
+
+    public static ObservableList<Review> getDatausers(){
+        Connection conn = getConnection();
+        ObservableList<Review> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from sportapp.review2");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                list.add(new Review(rs.getString("username"), rs.getString("Review")));
+            }
+        } catch (Exception e) {
+        }
+        return list;
     }
 }
