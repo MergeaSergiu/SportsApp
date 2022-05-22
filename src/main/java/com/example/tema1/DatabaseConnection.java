@@ -82,4 +82,34 @@ public class DatabaseConnection {
         return list;
     }
 
+
+    public static ObservableList<Hours> getDatausers3(){
+        Connection conn = getConnection();
+        ObservableList<Hours> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from orar_terenafara");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                list.add(new Hours(rs.getString("Orar")));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public static ObservableList<Hours> getDatausers4(){
+        Connection conn = getConnection();
+        ObservableList<Hours> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from orar_terenacoperit");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                list.add(new Hours(rs.getString("Orar")));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
 }

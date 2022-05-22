@@ -14,6 +14,9 @@ public class MainPageAdminController {
     private Button users_button;
 
     @FXML
+    private Button field_programs;
+
+    @FXML
     void reservation_actions() throws IOException {
         Main m = new Main();
         m.changeScene("AdminReservationsView.fxml");
@@ -27,7 +30,7 @@ public class MainPageAdminController {
     @FXML
     void field_programs_actions() throws IOException {
         Main l = new Main();
-        l.changeScene("AdminUsersView.fxml");
+        l.changeScene("FieldsSelectionSchedule.fxml");
     }
 
 
