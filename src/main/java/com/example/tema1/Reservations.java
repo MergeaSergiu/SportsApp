@@ -12,8 +12,8 @@ public class Reservations {
  private String Heat;
  private String Court;
 
- public Reservations(int IDReservation, String username, Date Date, String Time_Schedule,String Heat, String Court){
-     this.IDReservation = IDReservation;
+ public Reservations( String username, Date Date, String Time_Schedule,String Heat, String Court){
+
      this.username = username;
      this.Date = Date;
      this.Time_Schedule = Time_Schedule;
@@ -21,13 +21,6 @@ public class Reservations {
      this.Court = Court;
  }
 
- public void setIDReservation(int IDReservation){
-     this.IDReservation=IDReservation;
- }
-
- public int getIDReservation(){
-     return this.IDReservation;
- }
 
  public void setName(String Name){
      this.username = Name;
