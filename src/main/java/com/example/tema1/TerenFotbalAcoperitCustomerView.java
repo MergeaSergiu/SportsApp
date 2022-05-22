@@ -2,13 +2,19 @@ package com.example.tema1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class TerenFotbalAcoperitCustomerView {
+public class TerenFotbalAcoperitCustomerView implements Initializable  {
 
     @FXML
     private Button afiseaza_review;
@@ -29,11 +35,8 @@ public class TerenFotbalAcoperitCustomerView {
     private CheckBox check_caldura;
 
     @FXML
-    private ChoiceBox<String> choice_box_ora;
-    private String[] ore = {"ora5_6","ora6_7","ora7_8","ora8_9"};
-    public void initialize(){
-        choice_box_ora.getItems().addAll(ore);
-    }
+    private ComboBox<String> Orar;
+
 
     @FXML
     private Label error_message;
@@ -71,12 +74,41 @@ public class TerenFotbalAcoperitCustomerView {
     @FXML
     private Label valid_message;
 
+    private PreparedStatement pst;
+    private Connection connection;
+
+    private DatabaseConnection dbConnection;
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        dbConnection = new DatabaseConnection();
+        connection = dbConnection.getConnection();
+        insertTime_Schedule();
+    }
+
+    private void insertTime_Schedule(){
+        Orar.getItems().removeAll(Orar.getItems());
+        String query = "SELECT DISTINCT  Orar FROM  orar_terenacoperit";
+        try{
+            PreparedStatement statement;
+            statement = connection.prepareStatement(query);
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                String Time_Schedule = rs.getString("Orar");
+                Orar.getItems().add(Time_Schedule);
+
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
     @FXML
     void Save_Reservation_Teren_Acoperit(ActionEvent event) {
 
         String nume_teren= "Teren_Fotbal_Acoperit";
         try{
-            if(text_username.getText().isEmpty() || calendar_data.getValue() == null || choice_box_ora.getValue() == null){
+            if(text_username.getText().isEmpty() || calendar_data.getValue() == null || Orar.getSelectionModel().getSelectedItem() == null){
                 error_message.setText("Please fill in all the fields");
                 valid_message.setText("");
             }
@@ -94,12 +126,12 @@ public class TerenFotbalAcoperitCustomerView {
                 }
 
                 java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
-                if(SaveReservation.validateReservation(data,choice_box_ora.getValue(),nume_teren)){
+                if(SaveReservation.validateReservation(data,Orar.getSelectionModel().getSelectedItem(),nume_teren)){
                     error_message.setText("Rezervarea exista deja in baza de date");
                     valid_message.setText("");
                 }
                 else {
-                    SaveReservation.addReservation(text_username.getText(), data, choice_box_ora.getValue().toString(), Caldura, nume_teren);
+                    SaveReservation.addReservation(text_username.getText(), data, Orar.getSelectionModel().getSelectedItem(), Caldura, nume_teren);
                     valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA!!");
                     error_message.setText("");
                 }
