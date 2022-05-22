@@ -15,7 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javax.swing.JOptionPane;
+//import javafx.swing.JOptionPane;
+
+import javax.swing.*;
 
 /**
  *

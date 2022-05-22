@@ -73,9 +73,9 @@ public class LoginController {
                 if(queryResult.getInt(1)==1){
                     //loginMessageLabel.setText("Congratulations!");
                     createAccountStage();
-                    if((tf_username.getText().equals("dani.neagoe@yahoo.com")==true)&&(tf_password.getText().equals("Wefwe9jnkk")==true)){
+                    if((tf_username.getText().equals("dani.neagoe@yahoo.com")==true)&&(tf_password.getText().equals("3456")==true)){
                         Main l = new Main();
-                        l.changeScene("AdminView.fxml");
+                        l.changeScene("MainPageAdmin.fxml");
                     }else {
                         Main l = new Main();
                         l.changeScene("CustomerView.fxml");

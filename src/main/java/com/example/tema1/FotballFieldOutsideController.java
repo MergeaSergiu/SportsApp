@@ -60,7 +60,7 @@ public class FotballFieldOutsideController implements Initializable {
             pst.setString(1, txt_hours.getText());
             pst.execute();
 
-            JOptionPane.showMessageDialog(null, "Users Add succes");
+            JOptionPane.showMessageDialog(null, "Time_Schedule Added ");
             search_user();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
