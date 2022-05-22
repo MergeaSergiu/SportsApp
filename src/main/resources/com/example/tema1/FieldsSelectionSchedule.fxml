@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.FieldsSelectionSchedule">
+   <children>
+      <ImageView fitHeight="616.0" fitWidth="500.0" layoutX="-3.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pexels-photo-2853664.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
