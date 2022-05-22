@@ -24,5 +24,11 @@ public class MainPageAdminController {
         Main l = new Main();
         l.changeScene("AdminUsersView.fxml");
     }
+    @FXML
+    void field_programs_actions() throws IOException {
+        Main l = new Main();
+        l.changeScene("AdminUsersView.fxml");
+    }
+
 
 }
