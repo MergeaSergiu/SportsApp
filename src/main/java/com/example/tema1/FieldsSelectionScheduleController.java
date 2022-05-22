@@ -24,8 +24,9 @@ public class FieldsSelectionScheduleController {
     private Button tennis_court_button;
 
     @FXML
-    void basketball_court_action(ActionEvent event) {
-
+    void basketball_court_action(ActionEvent event) throws IOException {
+        Main m = new Main();
+        m.changeScene("BasketballField.fxml");
     }
 
     @FXML
@@ -41,13 +42,19 @@ public class FieldsSelectionScheduleController {
     }
 
     @FXML
-    void handball_field_action(ActionEvent event) {
-
+    void handball_field_action(ActionEvent event) throws IOException {
+        Main m = new Main();
+        m.changeScene("HandballField.fxml");
     }
 
     @FXML
-    void tennis_court_action(ActionEvent event) {
-
+    void tennis_court_action(ActionEvent event) throws IOException {
+        Main m = new Main();
+        m.changeScene("TenisField.fxml");
     }
 
+    public void home_button_action(ActionEvent actionEvent) throws IOException {
+        Main m = new Main();
+        m.changeScene("MainPageAdmin.fxml");
+    }
 }

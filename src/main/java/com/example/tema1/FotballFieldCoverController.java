@@ -145,7 +145,7 @@ public class FotballFieldCoverController implements Initializable {
     @FXML
     private void home_button_action() throws IOException {
         Main m = new Main();
-        m.changeScene("FieldsSelectionScheduleController.fxml");
+        m.changeScene("FieldsSelectionSchedule.fxml");
     }
 
     @Override

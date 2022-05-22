@@ -112,4 +112,52 @@ public class DatabaseConnection {
         }
         return list;
     }
+
+    public static ObservableList<Hours> getDatausers5(){
+        Connection conn = getConnection();
+        ObservableList<Hours> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from orar_terentenis");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                list.add(new Hours(rs.getString("Orar")));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+
+    public static ObservableList<Hours> getDatausers6(){
+        Connection conn = getConnection();
+        ObservableList<Hours> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from orar_terenbasketball");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                list.add(new Hours(rs.getString("Orar")));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+
+    public static ObservableList<Hours> getDatausers7(){
+        Connection conn = getConnection();
+        ObservableList<Hours> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from orar_terenhandball1");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                list.add(new Hours(rs.getString("Orar")));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
 }

@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
  *
  * @author amir
  */
-public class FotballFieldOutsideController implements Initializable {
+public class HandballFieldController implements Initializable {
 
 
     @FXML
@@ -54,7 +54,7 @@ public class FotballFieldOutsideController implements Initializable {
     public void Add_users (){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String sql = "insert into orar_terenafara (Orar)values(? )";
+        String sql = "insert into orar_terenhandball1 (Orar)values(? )";
         try {
             pst = connectDB.prepareStatement(sql);
             pst.setString(1, txt_hours.getText());
@@ -85,7 +85,7 @@ public class FotballFieldOutsideController implements Initializable {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
             String value1 = txt_hours.getText();
-            /*??????*/String sql = "update orar_terenacoperit set Orar= '"+value1+"' where Orar='"+value1+"' ";
+            /*??????*/String sql = "update orar_terenhandball1 set Orar= '"+value1+"' where Orar='"+value1+"' ";
             pst= connectDB.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Update");
@@ -100,7 +100,7 @@ public class FotballFieldOutsideController implements Initializable {
     public void Delete(){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String sql = "delete from orar_terenacoperit where Orar = ?";
+        String sql = "delete from orar_terenhandball1 where Orar = ?";
         try {
             pst = connectDB.prepareStatement(sql);
             pst.setString(1, txt_hours.getText());
@@ -120,7 +120,7 @@ public class FotballFieldOutsideController implements Initializable {
     void search_user() {
         col_hours.setCellValueFactory(new PropertyValueFactory<Hours,String>("hours"));
 
-        dataList = DatabaseConnection.getDatausers3();
+        dataList = DatabaseConnection.getDatausers7();
         table_users.setItems(dataList);
         FilteredList<Hours> filteredData = new FilteredList<>(dataList, b -> true);
         filterField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -154,4 +154,3 @@ public class FotballFieldOutsideController implements Initializable {
         // Code Source in description
     }
 }
-
