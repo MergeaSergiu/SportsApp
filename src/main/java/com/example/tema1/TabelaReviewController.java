@@ -99,7 +99,7 @@ public class TabelaReviewController<index> implements Initializable {
         col_username.setCellValueFactory(new PropertyValueFactory<Review,String>("username"));
         col_review.setCellValueFactory(new PropertyValueFactory<Review,String>("Review"));
 
-        dataList = DatabaseConnection.getDatausers();
+        dataList = DatabaseConnection.getDatausers0();
         table_users.setItems(dataList);
         FilteredList<Review> filteredData = new FilteredList<>(dataList, b -> true);
         filterField.textProperty().addListener((observable, oldValue, newValue) -> {
