@@ -16,8 +16,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import jdk.nashorn.internal.runtime.RewriteException;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class TabelaReviewController<index> implements Initializable {
@@ -29,6 +34,9 @@ public class TabelaReviewController<index> implements Initializable {
 
     @FXML
     private TableColumn<Review, String> col_username;
+
+    @FXML
+    private Button add_button;
 
     @FXML
     private TextField filterField;
@@ -162,6 +170,44 @@ public class TabelaReviewController<index> implements Initializable {
             Main button_menu_action = new Main();
             button_menu_action.changeScene("CustomerView.fxml");
     }
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    @FXML
+    void add_Review_action(ActionEvent event) {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+
+        String sql = "insert into sportapp.review2 (username,Review)values(?,?)";
+        try{
+            pst = connectDB.prepareStatement(sql);
+            pst.setString(1, txt_username.getText());
+            pst.setString(2, txt_id.getText());
+            pst.execute();
+
+            JOptionPane.showMessageDialog(null, "Review Add succes");
+            search_user();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    public void Edit (){
+        try {
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connectDB = connectNow.getConnection();
+            String value1 = txt_username.getText();
+            String value2 = txt_id.getText();
+            /*??????*/String sql = "UPDATE sportapp.review2 set username= '"+value1+"' , Review ='"+value2+ "' where username='"+value1+"' , Review = '"+value2+"' ";
+            pst= connectDB.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Update");
+            search_user();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -169,6 +215,8 @@ public class TabelaReviewController<index> implements Initializable {
         search_user();
 
     }
+
+
 
 
 

@@ -86,5 +86,6 @@
       <Button fx:id="afiseaza_review" layoutX="961.0" layoutY="533.0" mnemonicParsing="false" onAction="#afiseaza_review" prefHeight="32.0" prefWidth="127.0" text="Afiseaza Review" />
       <Label fx:id="error_review" layoutX="774.0" layoutY="328.0" prefHeight="32.0" prefWidth="366.0" />
       <ComboBox fx:id="Orar" layoutX="320.0" layoutY="295.0" prefHeight="25.0" prefWidth="174.0" />
+      <ImageView fitHeight="49.0" fitWidth="162.0" layoutX="113.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" />
     </children>
 </AnchorPane>
