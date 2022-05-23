@@ -56,6 +56,12 @@ public class AboutUsController {
     private ImageView image2;
 
     @FXML
+    private ImageView sing_up_image;
+
+    @FXML
+    private ImageView log_in_image;
+
+    @FXML
     void home_page_action(ActionEvent event) throws IOException {
         Main home_page = new Main();
         home_page.changeScene("FirstPage.fxml");

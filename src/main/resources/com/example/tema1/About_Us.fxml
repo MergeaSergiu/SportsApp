@@ -68,8 +68,6 @@
          </children></AnchorPane>
       <Label fx:id="login_label" layoutX="751.0" layoutY="435.0" prefHeight="34.0" prefWidth="117.0" text="Already a member?" />
       <Label fx:id="sign_up_label" alignment="CENTER" layoutX="926.0" layoutY="435.0" prefHeight="34.0" prefWidth="109.0" text="New Member?" />
-      <Button fx:id="log_in_button" layoutX="758.0" layoutY="470.0" mnemonicParsing="false" onAction="#log_in_page" prefHeight="56.0" prefWidth="100.0" text="Log in" />
-      <Button fx:id="sign_up_button" layoutX="928.0" layoutY="470.0" mnemonicParsing="false" onAction="#sign_up_page" prefHeight="56.0" prefWidth="100.0" text="Sign_up" />
       <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="89.0" prefWidth="137.0">
          <children>
             <ImageView fx:id="menu_image" fitHeight="56.0" fitWidth="62.0" layoutX="35.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
@@ -78,6 +76,26 @@
                </image>
             </ImageView>
             <Button fx:id="home_page_button" layoutX="37.0" layoutY="13.0" mnemonicParsing="false" onAction="#home_page_action" prefHeight="62.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="701.0" layoutY="472.0" prefHeight="89.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="log_in_image" fitHeight="79.0" fitWidth="109.0" layoutX="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Please_log_in_image.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="log_in_button" layoutX="46.0" mnemonicParsing="false" onAction="#log_in_page" prefHeight="68.0" prefWidth="109.0" style="-fx-background-color: transparent;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="929.0" layoutY="458.0" prefHeight="89.0" prefWidth="109.0">
+         <children>
+            <ImageView fx:id="sing_up_image" fitHeight="68.0" fitWidth="84.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sign_up_image2.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="sign_up_button" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#sign_up_page" prefHeight="68.0" prefWidth="68.0" style="-fx-background-color: transparent;" />
          </children>
       </AnchorPane>
    </children>

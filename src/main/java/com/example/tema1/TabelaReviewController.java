@@ -170,6 +170,17 @@ public class TabelaReviewController<index> implements Initializable {
             Main button_menu_action = new Main();
             button_menu_action.changeScene("CustomerView.fxml");
     }
+
+    public static boolean validateUser(String username) throws SQLException{
+        PreparedStatement statement;
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connection = connectNow.getConnection();
+        statement= connection.prepareStatement("SELECT * from sportapp.sign_up_table where username =?");
+        statement.setString(1,username);
+        ResultSet user = statement.executeQuery();
+        return user.next();
+    }
+
     ResultSet rs = null;
     PreparedStatement pst = null;
     @FXML
@@ -177,16 +188,19 @@ public class TabelaReviewController<index> implements Initializable {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-
         String sql = "insert into sportapp.review2 (username,Review)values(?,?)";
         try{
             pst = connectDB.prepareStatement(sql);
             pst.setString(1, txt_username.getText());
             pst.setString(2, txt_id.getText());
             pst.execute();
-
-            JOptionPane.showMessageDialog(null, "Review Add succes");
-            search_user();
+            if(validateUser(txt_username.getText())) {
+                JOptionPane.showMessageDialog(null, "Review Added successfully");
+                search_user();
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Username does not exist in database");
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
@@ -199,6 +213,7 @@ public class TabelaReviewController<index> implements Initializable {
             String value1 = txt_username.getText();
             String value2 = txt_id.getText();
             /*??????*/String sql = "UPDATE sportapp.review2 set username= '"+value1+"' , Review ='"+value2+ "' where username='"+value1+"' , Review = '"+value2+"' ";
+
             pst= connectDB.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Update");
