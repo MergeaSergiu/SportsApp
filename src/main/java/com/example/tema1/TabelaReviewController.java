@@ -184,25 +184,25 @@ public class TabelaReviewController<index> implements Initializable {
     ResultSet rs = null;
     PreparedStatement pst = null;
     @FXML
-    void add_Review_action(ActionEvent event) {
+    void add_Review_action(ActionEvent event) throws SQLException {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
         String sql = "insert into sportapp.review2 (username,Review)values(?,?)";
-        try{
-            pst = connectDB.prepareStatement(sql);
-            pst.setString(1, txt_username.getText());
-            pst.setString(2, txt_id.getText());
-            pst.execute();
-            if(validateUser(txt_username.getText())) {
-                JOptionPane.showMessageDialog(null, "Review Added successfully");
-                search_user();
+        if(!validateUser(txt_username.getText())) {
+            JOptionPane.showMessageDialog(null, "Username does not exist in database");
+            search_user();
+        }else {
+            try {
+                pst = connectDB.prepareStatement(sql);
+                pst.setString(1, txt_username.getText());
+                pst.setString(2, txt_id.getText());
+                pst.execute();
+                JOptionPane.showMessageDialog(null, "Review added");
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
             }
-            else{
-                JOptionPane.showMessageDialog(null,"Username does not exist in database");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
         }
     }
 
