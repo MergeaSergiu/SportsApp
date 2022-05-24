@@ -2,18 +2,16 @@ package com.example.tema1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
 public class TerenHandbalCustomerView {
+
+    @FXML
+    private Button afiseaza_review;
 
     @FXML
     private ImageView back_image;
@@ -33,12 +31,9 @@ public class TerenHandbalCustomerView {
     @FXML
     private ChoiceBox<String> choice_box_ora;
     private String[] ore = {"ora5_6","ora6_7","ora7_8","ora8_9"};
-
     public void initialize(){
         choice_box_ora.getItems().addAll(ore);
     }
-
-
 
     @FXML
     private Label error_message;
@@ -59,13 +54,23 @@ public class TerenHandbalCustomerView {
     private Label label_selecteaza_data;
 
     @FXML
+    private Button posteaza_review;
+
+    @FXML
     private Button salveaza_rezervare;
+
+    @FXML
+    private TextField text_review;
+
+    @FXML
+    private TextField text_username;
+
+    @FXML
+    private TextField username_verify;
 
     @FXML
     private Label valid_message;
 
-    @FXML
-    private TextField text_username;
 
     @FXML
     void Save_Reservation_Handbal(ActionEvent event) {
@@ -90,10 +95,15 @@ public class TerenHandbalCustomerView {
                 }
 
                 java.sql.Date data = java.sql.Date.valueOf(calendar_data.getValue());
-                // System.out.println(choice_box_ora.getValue().toString());
-                SaveReservation.addReservation(text_username.getText(),data, choice_box_ora.getValue().toString(),Caldura,nume_teren);
-                valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA");
-                error_message.setText("");
+                if(SaveReservation.validateReservation(data,choice_box_ora.getValue().toString(),nume_teren)){
+                    error_message.setText("Rezervarea exista deja in baza de date");
+                    valid_message.setText("");
+                }
+                else {
+                    SaveReservation.addReservation(text_username.getText(), data, choice_box_ora.getValue().toString(), Caldura, nume_teren);
+                    valid_message.setText("Rezervarea a fost salvata cu succes. NU UITA DE ACEASTA");
+                    error_message.setText("");
+                }
             }
 
         } catch (SQLException e) {
@@ -115,5 +125,38 @@ public class TerenHandbalCustomerView {
         menu_page.changeScene("CustomerView.fxml");
     }
 
+    public static void AlertBox(String s) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Mesaj pentru Review");
+        //alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText(s);
+        alert.showAndWait();
+    }
+
+    @FXML
+    void posteaza_review(ActionEvent event) throws SQLException {
+
+        if(username_verify.getText().isEmpty() ){
+            AlertBox("Introduceti un username!");
+        }
+        else if(text_review.getText().isEmpty())
+        {
+            AlertBox("Nu lasa sectiunea necompletata");
+        } else if (SaveReview.validateUser(username_verify.getText()) == false) {
+            AlertBox("Username-ul nu exista!");
+        }
+        else{
+            SaveReview.addReview(username_verify.getText(),text_review.getText());
+            //error_message.setText("Review-ul a fost adaugat");
+            AlertBox("Review-ul a fost adugat cu succes");
+        }
+
+    }
+
+    @FXML
+    void afiseaza_review(ActionEvent event) throws IOException {
+        Main afiseaza_review = new Main();
+        afiseaza_review.changeScene("TabelaReview.fxml");
+    }
 }
 
