@@ -59,13 +59,13 @@ public class LoginController {
 
     public void action_tf_password(ActionEvent actionEvent) {
     }
-
     public void validateLogin(){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
         String verifyLogin = "SELECT count(1) FROM sportapp.sign_up_table WHERE username= '"+tf_username.getText()+"' AND password = '"+ encodePassword(tf_username.getText(),tf_password.getText()) +"'";
         try{
+
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
 

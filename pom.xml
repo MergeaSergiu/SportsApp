@@ -90,6 +90,17 @@
             <artifactId>nashorn</artifactId>
             <version>jdk8u265-b01-x3</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- Thanks for using https://jar-download.com -->
 
 
