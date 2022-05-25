@@ -21,8 +21,12 @@ public class Reservations {
      this.Court = Court;
  }
 
+    public Reservations() {
 
- public void setName(String Name){
+    }
+
+
+    public void setName(String Name){
      this.username = Name;
  }
 
