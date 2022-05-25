@@ -57,7 +57,7 @@ public class CustomerViewController {
     }
 
     @FXML
-    void action_button_home(ActionEvent event) throws IOException {
+    void action_button_home() throws IOException {
         Main l = new Main();
         l.changeScene("FirstPage.fxml");
     }

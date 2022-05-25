@@ -63,8 +63,10 @@ public class AboutUsController {
 
     @FXML
     void home_page_action(ActionEvent event) throws IOException {
+
         Main home_page = new Main();
         home_page.changeScene("FirstPage.fxml");
+
     }
 
     @FXML
