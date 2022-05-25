@@ -189,10 +189,13 @@ public class TabelaReviewController<index> implements Initializable {
         Connection connectDB = connectNow.getConnection();
 
         String sql = "insert into sportapp.review2 (username,Review)values(?,?)";
-        if(!validateUser(txt_username.getText())) {
+        if(!validateUser(txt_username.getText()) ) {
             JOptionPane.showMessageDialog(null, "Username does not exist in database");
             search_user();
-        }else {
+        }else if( validateUser(txt_username.getText()) && txt_id.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Review text is empty");
+        } else
+            {
             try {
                 pst = connectDB.prepareStatement(sql);
                 pst.setString(1, txt_username.getText());

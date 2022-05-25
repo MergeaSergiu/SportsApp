@@ -2,13 +2,14 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.Sign_upController">
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tema1.Sign_upController">
    <children>
       <AnchorPane layoutX="-666.0" layoutY="-50.0" prefHeight="250.0" prefWidth="866.0" />
       <AnchorPane layoutX="-6.0" prefHeight="600.0" prefWidth="500.0">
@@ -31,7 +32,6 @@
          </font>
       </Label>
       <TextField fx:id="tf_username" layoutX="881.0" layoutY="112.0" onAction="#action_tf_username" prefHeight="39.0" prefWidth="304.0" />
-      <TextField fx:id="tf_password" layoutX="880.0" layoutY="189.0" onAction="#action_tf_password" prefHeight="39.0" prefWidth="304.0" />
       <Button fx:id="button_sing_up" layoutX="544.0" layoutY="382.0" mnemonicParsing="false" onAction="#action_button_sing_up" prefHeight="89.0" prefWidth="608.0" text="Sign Up!">
          <font>
             <Font size="36.0" />
@@ -57,11 +57,12 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <TextField fx:id="tf_confirm_password" layoutX="881.0" layoutY="259.0" onAction="#action_tf_password" prefHeight="39.0" prefWidth="304.0" />
       <Label fx:id="confirmPasswordField" layoutX="682.0" layoutY="300.0" prefHeight="70.0" prefWidth="469.0">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
+      <PasswordField fx:id="tf_password" layoutX="881.0" layoutY="189.0" onAction="#action_tf_username" prefHeight="39.0" prefWidth="298.0" />
+      <PasswordField fx:id="tf_confirm_password" layoutX="883.0" layoutY="260.0" prefHeight="39.0" prefWidth="298.0" />
    </children>
 </AnchorPane>

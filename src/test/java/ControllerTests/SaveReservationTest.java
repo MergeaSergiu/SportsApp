@@ -15,21 +15,23 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SaveReservationTest {
 
 
-
     @BeforeAll
     static void beforeAll(){
         DatabaseConnection.getConnection();
     }
 
 
+
     @Test
     public void addReservationTest() throws SQLException{
+
         java.sql.Date d1 = new java.sql.Date(2022,10,10);
         SaveReservation.addReservation("mergeamihai@yahoo.com",d1,"10-11","TRUE","Teren_Fotbal_Afara");
         PreparedStatement statement;
         statement = DatabaseConnection.getConnection().prepareStatement("SELECT * from reservation2 WHERE username = 'mergeamihai@yahoo.com' ");
         ResultSet resultSet = statement.executeQuery();
         Assertions.assertNotNull(resultSet.next());
+
     }
 
     @Test

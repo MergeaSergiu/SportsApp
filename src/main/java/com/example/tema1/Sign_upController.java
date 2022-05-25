@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -20,22 +21,19 @@ public class Sign_upController{
     private Button button_sing_up;
 
     @FXML
-    private TextField tf_password;
-
-    @FXML
-    private TextField tf_username;
-
-    @FXML
-    private TextField sign_up_MessageLabel;
-
-    @FXML
-    private TextField tf_confirm_password;
-
-    @FXML
     private Label confirmPasswordField;
 
     @FXML
     private Label registrationMessageLabel;
+
+    @FXML
+    private PasswordField tf_confirm_password;
+
+    @FXML
+    private PasswordField tf_password;
+
+    @FXML
+    private TextField tf_username;
 
     @FXML
     private void action_button_login() throws IOException {
