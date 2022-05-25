@@ -17,9 +17,10 @@ public class SaveReservationTest {
 
     @BeforeAll
     static void beforeAll(){
-        DatabaseConnection.getConnection();
-    }
 
+        DatabaseConnection.getConnection();
+
+    }
 
 
     @Test
